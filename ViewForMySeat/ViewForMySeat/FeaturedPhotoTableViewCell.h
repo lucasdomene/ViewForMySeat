@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FeaturedPhotoTableViewCell.h
 //  ViewForMySeat
 //
 //  Created by Lucas Domene Firmo on 9/22/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FeaturedPhotoTableViewCell : UITableViewCell
 
 @end
-
