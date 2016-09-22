@@ -23,6 +23,12 @@
     
     NSURL * venueDetailsURL = [ViewForMySeatAPI venueDetailsURLWithVenue: @"Madison Square Garden"];
     NSLog(@"%@", venueDetailsURL);
+    
+    NSURL * featuredPhotosImageURL = [ViewForMySeatAPI featuredPhotoImageURLWithImageName:@"gjward06-20160723153247.jpg"];
+    NSLog(@"%@", featuredPhotosImageURL);
+    
+    NSURL * venueDetailsImageURL = [ViewForMySeatAPI venueDetailsImageURLWithImageName:@"anonymous-20160912183209.jpg"];
+    NSLog(@"%@", venueDetailsImageURL);
 }
 
 @end

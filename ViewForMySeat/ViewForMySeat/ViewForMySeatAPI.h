@@ -12,6 +12,8 @@
 
 + (NSURL *)viewForMySeatURLWithPath:(NSString *)path andParameters:(NSDictionary *)parameters;
 + (NSURL *)featuredPhotosURLWithPage:(NSString *)page;
-+ (NSURL *)venueDetailsURLWithVenue:(NSString *)venue;
++ (NSURL *)venueDetailsURLWithVenue:(NSString *)venueName;
++ (NSURL *)featuredPhotoImageURLWithImageName:(NSString *)imageName;
++ (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName;
 
 @end

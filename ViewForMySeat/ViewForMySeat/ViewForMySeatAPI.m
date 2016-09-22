@@ -13,9 +13,12 @@
 #pragma mark - Attributes
 
 static NSString * const appKey = @"f6bcd8e8bb853890f4fb2be8ce0418fa";
-static NSString * const baseURLString = @"https://aviewfrommyseat.com/avf/api";
-static NSString * const featuredPhotosPath = @"featured.php";
-static NSString * const venueDetailsPath = @"venue.php";
+static NSString * const baseURLString = @"https://aviewfrommyseat.com/";
+static NSString * const featuredPhotosPath = @"avf/api/featured.php";
+static NSString * const featuredPhotosImagePath = @"wallpaper";
+static NSString * const venueDetailsPath = @"avf/api/venue.php";
+static NSString * const venueDetailsImagePath = @"photos";
+
 
 #pragma mark - Static Functions
 
@@ -42,8 +45,16 @@ static NSString * const venueDetailsPath = @"venue.php";
     return [self viewForMySeatURLWithPath:featuredPhotosPath andParameters: @{ @"page" : page, @"total" : @"20" }];
 }
 
-+ (NSURL *)venueDetailsURLWithVenue:(NSString *)venue {
-    return [self viewForMySeatURLWithPath:venueDetailsPath andParameters:@{ @"venue" : venue, @"info": @"true" }];
++ (NSURL *)venueDetailsURLWithVenue:(NSString *)venueName {
+    return [self viewForMySeatURLWithPath:venueDetailsPath andParameters:@{ @"venue" : venueName, @"info": @"true" }];
+}
+
++ (NSURL *)featuredPhotoImageURLWithImageName:(NSString *)imageName {
+    return [self viewForMySeatURLWithPath:[featuredPhotosImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
+}
+
++ (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName {
+    return [self viewForMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
 
 @end
