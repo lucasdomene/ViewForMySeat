@@ -7,6 +7,7 @@
 //
 
 #import "FeaturedPhotosViewController.h"
+#import "ViewForMySeatAPI.h"
 
 @interface FeaturedPhotosViewController ()
 
@@ -16,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSURL * featuredPhotosURL = [ViewForMySeatAPI featuredPhotosURLWithPage: @"1"];
+    NSLog(@"%@", featuredPhotosURL);
+    
+    NSURL * venueDetailsURL = [ViewForMySeatAPI venueDetailsURLWithVenue: @"Madison Square Garden"];
+    NSLog(@"%@", venueDetailsURL);
 }
 
 @end
