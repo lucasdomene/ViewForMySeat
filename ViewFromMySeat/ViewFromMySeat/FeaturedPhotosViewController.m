@@ -12,16 +12,32 @@
 #import "VenuesStore.h"
 #import "FeaturedPhoto.h"
 #import "Venue.h"
+#import "FeaturedPhotosDataSource.h"
+
+@interface FeaturedPhotosViewController()
+
+@property (nonatomic) FeaturedPhotosDataSource * featuredPhotosDataSource;
+
+@end
 
 @implementation FeaturedPhotosViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FeaturedPhotosStore * featuredPhotosStore = [[FeaturedPhotosStore alloc] init];
-    VenuesStore * venueStore = [[VenuesStore alloc] init];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FeaturedPhotoTableViewCell" bundle:nil] forCellReuseIdentifier:@"FeaturedPhotoCell"];
     
-
+    _featuredPhotosDataSource = [FeaturedPhotosDataSource new];
+    self.tableView.dataSource = _featuredPhotosDataSource;
+    
+    [_featuredPhotoStore fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray *featuredPhotos, NSError *error) {
+        if (featuredPhotos) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                self.featuredPhotosDataSource.featuredPhotos = featuredPhotos;
+                [self.tableView reloadData];
+            }];
+        }
+    }];
 }
 
 

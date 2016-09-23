@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="JKu-r7-MPe" customClass="FeaturedPhotoTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeaturedPhotoCell" rowHeight="223" id="JKu-r7-MPe" customClass="FeaturedPhotoTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKu-r7-MPe" id="N27-Cl-6E8">
@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xB2-qf-IcH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="9bI-Hc-cws"/>
                                     <constraint firstAttribute="height" constant="140" id="XB6-Ue-Xpn"/>
@@ -85,6 +86,11 @@
                     <constraint firstItem="8kZ-QS-efy" firstAttribute="top" secondItem="N27-Cl-6E8" secondAttribute="top" id="tyq-43-Mhp"/>
                 </constraints>
             </tableViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="notesLabel" destination="6m8-2f-GU5" id="wlb-hO-Maj"/>
                 <outlet property="numberOfViewsLabel" destination="veI-Nq-0bj" id="Iec-bo-qSD"/>

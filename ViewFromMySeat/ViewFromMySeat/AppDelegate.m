@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FeaturedPhotosViewController.h"
+#import "FeaturedPhotosStore.h"
 
 @interface AppDelegate ()
 
@@ -15,6 +17,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    FeaturedPhotosViewController * vc = (FeaturedPhotosViewController *)self.window.rootViewController;
+    vc.featuredPhotoStore = [FeaturedPhotosStore new];
     return YES;
 }
 
