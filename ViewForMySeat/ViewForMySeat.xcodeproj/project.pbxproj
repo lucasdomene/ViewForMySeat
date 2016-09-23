@@ -18,6 +18,7 @@
 		A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B251D947DC1007DB91A /* VenueViewController.m */; };
 		A0162B2A1D947DE4007DB91A /* ViewForMySeatAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B291D947DE4007DB91A /* ViewForMySeatAPI.m */; };
 		A0162B2D1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B2C1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m */; };
+		A0162B311D94D973007DB91A /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B301D94D973007DB91A /* ImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		A0162B291D947DE4007DB91A /* ViewForMySeatAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForMySeatAPI.m; sourceTree = "<group>"; };
 		A0162B2B1D947E0F007DB91A /* FeaturedPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotoTableViewCell.h; sourceTree = "<group>"; };
 		A0162B2C1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotoTableViewCell.m; sourceTree = "<group>"; };
+		A0162B2F1D94D973007DB91A /* ImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
+		A0162B301D94D973007DB91A /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		A0162B011D9474D7007DB91A /* ViewForMySeat */ = {
 			isa = PBXGroup;
 			children = (
+				A0162B2E1D94D952007DB91A /* Cache */,
 				A0162B271D947DCA007DB91A /* Networking */,
 				A0162B1C1D94751B007DB91A /* Constants */,
 				A0162B1B1D947514007DB91A /* Views */,
@@ -152,6 +156,15 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		A0162B2E1D94D952007DB91A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A0162B2F1D94D973007DB91A /* ImageStore.h */,
+				A0162B301D94D973007DB91A /* ImageStore.m */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +241,7 @@
 				A0162B071D9474D7007DB91A /* AppDelegate.m in Sources */,
 				A0162B041D9474D7007DB91A /* main.m in Sources */,
 				A0162B2D1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m in Sources */,
+				A0162B311D94D973007DB91A /* ImageStore.m in Sources */,
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
 				A0162B2A1D947DE4007DB91A /* ViewForMySeatAPI.m in Sources */,
