@@ -14,6 +14,6 @@
 @interface VenuesStore : BaseRequest
 
 - (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue * venue, NSError * error))completion;
-- (void)fetchVenueImageWithPath:(NSString *)imagePath withCompletion:(void(^)(UIImage * image, NSError * error))completion;
+- (void)fetchVenueImageForVenue:(Venue *)venue withCompletion:(void(^)(UIImage * image, NSError * error))completion;
 
 @end

@@ -8,8 +8,23 @@
 
 #import "VenuesStore.h"
 #import "ViewFromMySeatAPI.h"
+#import "ImageStore.h"
+
+@interface VenuesStore()
+
+@property (nonatomic) ImageStore * imageStore;
+
+@end
 
 @implementation VenuesStore
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _imageStore = [ImageStore new];
+    }
+    return self;
+}
 
 - (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue * venue, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI venueDetailsURLWithVenue:venueName];
@@ -26,13 +41,21 @@
     }];
 }
 
-- (void)fetchVenueImageWithPath:(NSString *)imagePath withCompletion:(void(^)(UIImage * image, NSError * error))completion {
-    NSURL * url = [ViewFromMySeatAPI venueDetailsImageURLWithImageName:imagePath];
+- (void)fetchVenueImageForVenue:(Venue *)venue withCompletion:(void(^)(UIImage * image, NSError * error))completion; {
+    UIImage * cachedImage = [_imageStore imageForKey:venue.venueID];
+    if (cachedImage) {
+        venue.image = cachedImage;
+        completion(cachedImage, nil);
+        return;
+    }
+    
+    NSURL * url = [ViewFromMySeatAPI venueDetailsImageURLWithImageName:venue.imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
+            [_imageStore cacheImage:image forKey:venue.venueID];
             completion(image, nil);
         } else {
             completion(nil, error);

@@ -8,8 +8,23 @@
 
 #import "FeaturedPhotosStore.h"
 #import "ViewFromMySeatAPI.h"
+#import "ImageStore.h"
+
+@interface FeaturedPhotosStore()
+
+@property (nonatomic) ImageStore * imageStore;
+
+@end
 
 @implementation FeaturedPhotosStore
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _imageStore = [ImageStore new];
+    }
+    return self;
+}
 
 - (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray * featuredPhotos, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotosURLWithPage:page];
@@ -27,12 +42,21 @@
 }
 
 - (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage * image, NSError * error))completion {
+    UIImage * cachedImage = [_imageStore imageForKey:featuredPhoto.featuredPhotoID];
+    if (cachedImage) {
+        featuredPhoto.image = cachedImage;
+        completion(cachedImage, nil);
+        return;
+    }
+    
     NSURL * url = [ViewFromMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
+            featuredPhoto.image = image;
+            [_imageStore cacheImage:image forKey:featuredPhoto.featuredPhotoID];
             completion(image, nil);
         } else {
             //treat error or pass it
