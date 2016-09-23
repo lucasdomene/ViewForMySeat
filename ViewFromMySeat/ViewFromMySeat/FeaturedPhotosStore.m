@@ -11,32 +11,32 @@
 
 @implementation FeaturedPhotosStore
 
-- (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray *))completion {
+- (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray * featuredPhotos, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotosURLWithPage:page];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             NSArray * featuredPhotos = [ViewFromMySeatAPI featuredPhotosFromJSONData:data];
-            completion(featuredPhotos);
+            completion(featuredPhotos, nil);
         } else {
             //treat error or pass it
-            completion(nil);
+            completion(nil, error);
         }
     }];
 }
 
-- (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage *))completion {
+- (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage * image, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
-            completion(image);
+            completion(image, nil);
         } else {
             //treat error or pass it
-            completion(nil);
+            completion(nil, error);
         }
     }];
 }

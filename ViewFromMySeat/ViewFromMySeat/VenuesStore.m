@@ -11,31 +11,31 @@
 
 @implementation VenuesStore
 
-- (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue *))completion {
+- (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue * venue, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI venueDetailsURLWithVenue:venueName];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             Venue * venue = [ViewFromMySeatAPI venueFromJSONData:data];
-            completion(venue);
+            completion(venue, nil);
         } else {
             // Throw the error
-            completion(nil);
+            completion(nil, error);
         }
     }];
 }
 
-- (void)fetchVenueImageWithPath:(NSString *)imagePath withCompletion:(void(^)(UIImage *))completion {
+- (void)fetchVenueImageWithPath:(NSString *)imagePath withCompletion:(void(^)(UIImage * image, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI venueDetailsImageURLWithImageName:imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
-            completion(image);
+            completion(image, nil);
         } else {
-            completion(nil);
+            completion(nil, error);
         }
     }];
 }

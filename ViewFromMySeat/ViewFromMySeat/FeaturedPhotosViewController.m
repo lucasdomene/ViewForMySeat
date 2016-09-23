@@ -21,14 +21,7 @@
     FeaturedPhotosStore * featuredPhotosStore = [[FeaturedPhotosStore alloc] init];
     VenuesStore * venueStore = [[VenuesStore alloc] init];
     
-    [featuredPhotosStore fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray * featuredPhotos) {
-        FeaturedPhoto *firstFP = featuredPhotos[0];
-        [venueStore fetchVenueWithName:firstFP.venue withCompletion:^(Venue * venue) {
-            [venueStore fetchVenueImageWithPath:venue.imagePath withCompletion:^(UIImage * image) {
-                NSLog(@"%@", image);
-            }];
-        }];
-    }];
+
 }
 
 
