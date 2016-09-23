@@ -13,6 +13,7 @@
 #import "FeaturedPhoto.h"
 #import "Venue.h"
 #import "FeaturedPhotosDataSource.h"
+#import "FeaturedPhotoTableViewCell.h"
 
 @interface FeaturedPhotosViewController()
 
@@ -59,6 +60,14 @@ BOOL isLastPage = NO;
     if (indexPath.row == _featuredPhotosDataSource.featuredPhotos.count - 5) {
         [self loadNextPage];
     }
+    
+    FeaturedPhoto * featuredPhoto = _featuredPhotosDataSource.featuredPhotos[indexPath.row];
+    [_featuredPhotoStore fetchImageForFeaturedPhoto:featuredPhoto withCompletion:^(UIImage *image, NSError *error) {
+       [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+           FeaturedPhotoTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+           [cell updateWithImage:image];
+       }];
+    }];
 }
 
 

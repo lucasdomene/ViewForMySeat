@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *notesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberOfViewsLabel;
 
+- (void)updateWithImage:(UIImage *)image;
+
 @end
