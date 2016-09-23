@@ -10,16 +10,18 @@
 
 @implementation FeaturedPhoto
 
-- (instancetype)initWithVenue:(NSString *)venue
-                    imagePath:(NSString *)imagePath
-                      section:(NSString *)section
-                          row:(NSString *)row
-                         seat:(NSString *)seat
-                        views:(NSString *)views
-                         note:(NSString *)note {
+- (instancetype)initWithFeaturedPhotoID:(NSString *)featuredPhotoID
+                              venueName:(NSString *)venueName
+                              imagePath:(NSString *)imagePath
+                                section:(NSString *)section
+                                    row:(NSString *)row
+                                   seat:(NSString *)seat
+                                  views:(NSString *)views
+                                   note:(NSString *)note {
     self = [super init];
     if (self) {
-        _venue = [venue copy];
+        _featuredPhotoID = [featuredPhotoID copy];
+        _venue = [venueName copy];
         _imagePath = [imagePath copy];
         _section = [section copy];
         _row = [row copy];
@@ -32,7 +34,8 @@
 }
 
 - (instancetype)initWithJSON:(NSDictionary *)json {
-    NSString * venue = json[@"venue"];
+    NSString * featuredPhotoID = json[@"index"];
+    NSString * venueName = json[@"venue"];
     NSString * imagePath = json[@"image"];
     NSString * section = json[@"section"];
     NSString * row = json[@"row"];
@@ -40,7 +43,7 @@
     NSString * views = json[@"views"];
     NSString * note = json[@"note"];
     
-    return [self initWithVenue:venue imagePath:imagePath section:section row:row seat:seat views:views note:note];
+    return [self initWithFeaturedPhotoID:featuredPhotoID venueName:venueName imagePath:imagePath section:section row:row seat:seat views:views note:note];
 }
 
 @end

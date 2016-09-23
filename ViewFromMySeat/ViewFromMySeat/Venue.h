@@ -10,6 +10,7 @@
 
 @interface Venue : NSObject
 
+@property (nonatomic, readonly, copy) NSString * venueID;
 @property (nonatomic, readonly, copy) NSString * name;
 @property (nonatomic, readonly, copy) NSString * imagePath;
 @property (nonatomic, readonly, copy) NSString * address;
@@ -20,15 +21,16 @@
 @property (nonatomic, readonly, copy) NSString * stats;
 @property (nonatomic, readonly, copy) NSString * link;
 
-- (instancetype)initWithName:(NSString *)name
-                   imagePath:(NSString *)imagePath
-                     address:(NSString *)address
-                        city:(NSString *)city
-                       state:(NSString *)state
-                     country:(NSString *)country
-               averageRating:(NSString *)averageRating
-                       stats:(NSString *)stats
-                        link:(NSString *)link;
+- (instancetype)initWithVenueID:(NSString *)venueID
+                           name:(NSString *)name
+                      imagePath:(NSString *)imagePath
+                        address:(NSString *)address
+                           city:(NSString *)city
+                          state:(NSString *)state
+                        country:(NSString *)country
+                  averageRating:(NSString *)averageRating
+                          stats:(NSString *)stats
+                           link:(NSString *)link;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

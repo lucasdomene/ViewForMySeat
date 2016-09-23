@@ -10,17 +10,19 @@
 
 @implementation Venue
 
-- (instancetype)initWithName:(NSString *)name
-                   imagePath:(NSString *)imagePath
-                     address:(NSString *)address
-                        city:(NSString *)city
-                       state:(NSString *)state
-                     country:(NSString *)country
-               averageRating:(NSString *)averageRating
-                       stats:(NSString *)stats
-                        link:(NSString *)link {
+- (instancetype)initWithVenueID:(NSString *)venueID
+                           name:(NSString *)name
+                      imagePath:(NSString *)imagePath
+                        address:(NSString *)address
+                           city:(NSString *)city
+                          state:(NSString *)state
+                        country:(NSString *)country
+                  averageRating:(NSString *)averageRating
+                          stats:(NSString *)stats
+                           link:(NSString *)link {
     self = [super init];
     if (self) {
+        _venueID = [_venueID copy];
         _name = [name copy];
         _imagePath = [imagePath copy];
         _address = [address copy];
@@ -36,6 +38,7 @@
 }
 
 - (instancetype)initWithJSON:(NSDictionary *)json {
+    NSString * venueID = json[@"id"];
     NSString * name = json[@"name"];
     NSString * imagePath = json[@"newest_image"];
     NSString * address = json[@"address"];
@@ -46,7 +49,7 @@
     NSString * stats = json[@"stats"];
     NSString * link = json[@"link"]; 
     
-    return [self initWithName:name imagePath:imagePath address:address city:city state:state country:country averageRating:averageRating stats:stats link:link];
+    return [self initWithVenueID:venueID name:name imagePath:imagePath address:address city:city state:state country:country averageRating:averageRating stats:stats link:link];
 }
 
 @end
