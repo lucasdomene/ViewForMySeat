@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FeaturedPhotosStore.h"
+#import "VenuesStore.h"
 
 @interface FeaturedPhotosViewController : UITableViewController <UITableViewDelegate>
 
 @property (nonatomic) FeaturedPhotosStore * featuredPhotoStore;
+@property (nonatomic) VenuesStore * venuesStore;
 
 @end
 

@@ -14,6 +14,7 @@
 #import "Venue.h"
 #import "FeaturedPhotosDataSource.h"
 #import "FeaturedPhotoTableViewCell.h"
+#import "VenueViewController.h"
 
 @interface FeaturedPhotosViewController()
 
@@ -69,6 +70,20 @@ BOOL isLastPage = NO;
        }];
     }];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FeaturedPhoto * featuredPhoto = _featuredPhotosDataSource.featuredPhotos[indexPath.row];
+    [self performSegueWithIdentifier:@"showVenueDetails" sender:featuredPhoto];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showVenueDetails"]) {
+        VenueViewController * venueViewController = (VenueViewController *)segue.destinationViewController;
+        venueViewController.venuesStore  = _venuesStore;
+        venueViewController.featuredPhoto = (FeaturedPhoto *)sender;;
+    }
+}
+
 
 
 @end

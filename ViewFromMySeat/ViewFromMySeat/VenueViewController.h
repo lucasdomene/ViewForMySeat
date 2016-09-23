@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VenuesStore.h"
+#import "FeaturedPhoto.h"
 
-@interface VenueViewController : UIViewController
+@interface VenueViewController : UITableViewController
+
+@property (nonatomic) VenuesStore * venuesStore;
+@property (nonatomic) FeaturedPhoto * featuredPhoto;
 
 @end

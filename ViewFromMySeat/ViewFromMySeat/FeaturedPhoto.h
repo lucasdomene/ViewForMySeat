@@ -22,13 +22,13 @@
 @property (nonatomic) UIImage * image;
 
 - (instancetype)initWithFeaturedPhotoID:(NSString *)featuredPhotoID
-                      venueName:(NSString *)venueName
-                      imagePath:(NSString *)imagePath
-                        section:(NSString *)section
-                            row:(NSString *)row
-                           seat:(NSString *)seat
-                          views:(NSString *)views
-                           note:(NSString *)note;
+                              venueName:(NSString *)venueName
+                              imagePath:(NSString *)imagePath
+                                section:(NSString *)section
+                                    row:(NSString *)row
+                                   seat:(NSString *)seat
+                                  views:(NSString *)views
+                                   note:(NSString *)note;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

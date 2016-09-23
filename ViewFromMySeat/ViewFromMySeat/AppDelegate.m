@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FeaturedPhotosViewController.h"
 #import "FeaturedPhotosStore.h"
+#import "VenuesStore.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +18,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    FeaturedPhotosViewController * vc = (FeaturedPhotosViewController *)self.window.rootViewController;
+    UINavigationController * nav = (UINavigationController *)self.window.rootViewController;
+    FeaturedPhotosViewController * vc = (FeaturedPhotosViewController *)nav.topViewController;
     vc.featuredPhotoStore = [FeaturedPhotosStore new];
+    vc.venuesStore = [VenuesStore new];
     return YES;
 }
 
