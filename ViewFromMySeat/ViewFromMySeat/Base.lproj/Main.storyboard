@@ -9,10 +9,11 @@
         <scene sceneID="e3i-Pv-vhS">
             <objects>
                 <tableViewController id="Bfn-j5-Vrn" customClass="FeaturedPhotosViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="223" sectionHeaderHeight="18" sectionFooterHeight="18" id="9mB-o7-CrZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="223" sectionHeaderHeight="18" sectionFooterHeight="18" id="9mB-o7-CrZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="Bfn-j5-Vrn" id="EyO-LA-gge"/>
                             <outlet property="delegate" destination="Bfn-j5-Vrn" id="4Ap-mg-cqM"/>
