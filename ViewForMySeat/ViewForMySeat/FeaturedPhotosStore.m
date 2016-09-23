@@ -41,7 +41,17 @@
 }
 
 - (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage *))completion {
+    NSURL * url = [ViewForMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+        if (data) {
+            UIImage *image = [UIImage imageWithData:data];
+            completion(image);
+        } else {
+            completion(nil);
+        }
+    }] resume];
 }
 
 

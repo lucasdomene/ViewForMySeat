@@ -23,9 +23,10 @@
     
     FeaturedPhotosStore *store = [[FeaturedPhotosStore alloc] init];
     [store fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray * featuredPhotos) {
-        for (FeaturedPhoto * fp in featuredPhotos) {
-            NSLog(@"%@", fp.venue);
-        }
+        FeaturedPhoto *firstFP = featuredPhotos[0];
+        [store fetchImageForFeaturedPhoto:firstFP withCompletion:^(UIImage * featuredPhotoImage) {
+            NSLog(@"%@", featuredPhotoImage);
+        }];
     }];
 }
 
