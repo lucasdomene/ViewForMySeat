@@ -21,6 +21,7 @@
 		A0162B311D94D973007DB91A /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B301D94D973007DB91A /* ImageStore.m */; };
 		A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */; };
 		A0162B361D94E98E007DB91A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0162B351D94E98E007DB91A /* Default-568h@2x.png */; };
+		A0ED59F01D94F1D100A7F3FA /* VenuesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ED59EF1D94F1D100A7F3FA /* VenuesStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		A0162B321D94DC60007DB91A /* FeaturedPhotosStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotosStore.h; sourceTree = "<group>"; };
 		A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotosStore.m; sourceTree = "<group>"; };
 		A0162B351D94E98E007DB91A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		A0ED59EE1D94F1D100A7F3FA /* VenuesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesStore.h; sourceTree = "<group>"; };
+		A0ED59EF1D94F1D100A7F3FA /* VenuesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				A0162B291D947DE4007DB91A /* ViewFromMySeatAPI.m */,
 				A0162B321D94DC60007DB91A /* FeaturedPhotosStore.h */,
 				A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */,
+				A0ED59EE1D94F1D100A7F3FA /* VenuesStore.h */,
+				A0ED59EF1D94F1D100A7F3FA /* VenuesStore.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				A0162B2D1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m in Sources */,
 				A0162B311D94D973007DB91A /* ImageStore.m in Sources */,
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
+				A0ED59F01D94F1D100A7F3FA /* VenuesStore.m in Sources */,
 				A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
 				A0162B2A1D947DE4007DB91A /* ViewFromMySeatAPI.m in Sources */,

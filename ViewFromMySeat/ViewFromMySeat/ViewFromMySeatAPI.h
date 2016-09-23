@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FeaturedPhoto.h"
+#import "Venue.h"
 
 @interface ViewFromMySeatAPI : NSObject
 
@@ -16,5 +18,6 @@
 + (NSURL *)featuredPhotoImageURLWithImageName:(NSString *)imageName;
 + (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName;
 + (NSArray *)featuredPhotosFromJSONData:(NSData *)data;
++ (Venue *)venueFromJSONData:(NSData *)data;
 
 @end

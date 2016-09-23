@@ -7,8 +7,6 @@
 //
 
 #import "ViewFromMySeatAPI.h"
-#import "FeaturedPhoto.h"
-#import "Venue.h"
 
 @implementation ViewFromMySeatAPI
 
@@ -56,22 +54,37 @@ static NSString * const venueDetailsImagePath = @"photos";
 }
 
 + (NSArray *)featuredPhotosFromJSONData:(NSData *)data {
-    NSError *jsonError;
-    NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData: data options:NSJSONReadingAllowFragments error:&jsonError];
+    NSError * jsonError;
+    NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
     
     if (!jsonError) {
         NSMutableArray * featuredPhotos = [[NSMutableArray alloc] init];
-        NSDictionary * featuredPhotosArray = responseObject[@"avfms"];
+        NSArray * featuredPhotosArray = responseObject[@"avfms"];
         
-        for (NSDictionary *featuredPhotoDictionary in featuredPhotosArray) {
+        for (NSDictionary * featuredPhotoDictionary in featuredPhotosArray) {
             FeaturedPhoto * featuredPhoto = [[FeaturedPhoto alloc] initWithJSON:featuredPhotoDictionary];
             [featuredPhotos addObject:featuredPhoto];
         }
         
         return featuredPhotos;
+    } else {
+        NSLog(@"Error parsing data to JSON: %@", jsonError);
+        return nil;
     }
+}
+
++ (Venue *)venueFromJSONData:(NSData *)data {
+    NSError * jsonError;
+    NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
     
-    return nil;
+    if (!jsonError) {
+        NSArray * venuesArray = responseObject[@"avfms"];
+        NSDictionary * venueDictionary = venuesArray.firstObject;
+        return [[Venue alloc] initWithJSON:venueDictionary];
+    } else {
+        NSLog(@"Error parsing data to JSON: %@", jsonError);
+        return nil;
+    }
 }
 
 

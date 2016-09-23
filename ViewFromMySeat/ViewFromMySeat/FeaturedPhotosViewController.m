@@ -9,6 +9,7 @@
 #import "FeaturedPhotosViewController.h"
 #import "ViewFromMySeatAPI.h"
 #import "FeaturedPhotosStore.h"
+#import "VenuesStore.h"
 #import "FeaturedPhoto.h"
 #import "Venue.h"
 
@@ -21,11 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FeaturedPhotosStore *store = [[FeaturedPhotosStore alloc] init];
-    [store fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray * featuredPhotos) {
+    FeaturedPhotosStore * featuredPhotosStore = [[FeaturedPhotosStore alloc] init];
+    VenuesStore * venueStore = [[VenuesStore alloc] init];
+    
+    [featuredPhotosStore fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray * featuredPhotos) {
         FeaturedPhoto *firstFP = featuredPhotos[0];
-        [store fetchImageForFeaturedPhoto:firstFP withCompletion:^(UIImage * featuredPhotoImage) {
-            NSLog(@"%@", featuredPhotoImage);
+        [venueStore fetchVenueWithName:firstFP.venue withCompletion:^(Venue * venue) {
+            [venueStore fetchVenueImageWithPath:venue.imagePath withCompletion:^(UIImage * image) {
+                NSLog(@"%@", image);
+            }];
         }];
     }];
 }
