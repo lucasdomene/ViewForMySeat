@@ -31,10 +31,6 @@
     return self;
 }
 
-- (instancetype)init {
-    return [self initWithVenue:nil imagePath:nil section:nil row:nil seat:nil views:nil note:nil];
-}
-
 - (instancetype)initWithJSON:(NSDictionary *)json {
     NSString * venue = json[@"venue"];
     NSString * imagePath = json[@"image"];

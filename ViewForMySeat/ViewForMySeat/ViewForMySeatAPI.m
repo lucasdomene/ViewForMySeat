@@ -7,6 +7,8 @@
 //
 
 #import "ViewForMySeatAPI.h"
+#import "FeaturedPhoto.h"
+#import "Venue.h"
 
 @implementation ViewForMySeatAPI
 
@@ -62,14 +64,13 @@ static NSString * const venueDetailsImagePath = @"photos";
         NSDictionary * featuredPhotosArray = responseObject[@"avfms"];
         
         for (NSDictionary *featuredPhotoDictionary in featuredPhotosArray) {
-            // Create FeaturedPhoto
-            // Add to featuredPhotos
+            FeaturedPhoto * featuredPhoto = [[FeaturedPhoto alloc] initWithJSON:featuredPhotoDictionary];
+            [featuredPhotos addObject:featuredPhoto];
         }
         
         return featuredPhotos;
     }
     
-    // Treat Error
     return nil;
 }
 
