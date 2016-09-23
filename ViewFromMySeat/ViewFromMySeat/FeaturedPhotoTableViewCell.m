@@ -8,14 +8,39 @@
 
 #import "FeaturedPhotoTableViewCell.h"
 
+@interface FeaturedPhotoTableViewCell()
+
+@property (nonatomic) UIActivityIndicatorView *spinner;
+
+@end
+
 @implementation FeaturedPhotoTableViewCell
+
+- (void)updateWithImage:(UIImage *)image {
+    if (image) {
+        [self.spinner stopAnimating];
+    } else {
+        [self.spinner startAnimating];
+    }
+    self.venueImageView.image = image;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self configureSpinner];
+    [self updateWithImage:nil];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    [self updateWithImage:nil];
+}
+
+- (void)configureSpinner {
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
+    _spinner.center = CGPointMake(CGRectGetMidX(self.venueImageView.frame), CGRectGetMidY(self.venueImageView.frame));
+    _spinner.hidesWhenStopped = YES;
+    [self.venueImageView addSubview:_spinner];
 }
 
 @end
