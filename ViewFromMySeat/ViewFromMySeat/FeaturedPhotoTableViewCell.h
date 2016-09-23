@@ -10,4 +10,10 @@
 
 @interface FeaturedPhotoTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *venueImageView;
+@property (strong, nonatomic) IBOutlet UILabel *venueNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *seatLabel;
+@property (strong, nonatomic) IBOutlet UILabel *notesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numberOfViewsLabel;
+
 @end
