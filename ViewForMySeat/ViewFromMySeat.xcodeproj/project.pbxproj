@@ -48,7 +48,7 @@
 		A0162B301D94D973007DB91A /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 		A0162B321D94DC60007DB91A /* FeaturedPhotosStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotosStore.h; sourceTree = "<group>"; };
 		A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotosStore.m; sourceTree = "<group>"; };
-		A0162B351D94E98E007DB91A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A0162B351D94E98E007DB91A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,6 @@
 		A0162AF61D9474D7007DB91A = {
 			isa = PBXGroup;
 			children = (
-				A0162B351D94E98E007DB91A /* Default-568h@2x.png */,
 				A0162B011D9474D7007DB91A /* ViewForMySeat */,
 				A0162B001D9474D7007DB91A /* Products */,
 			);
@@ -97,6 +96,7 @@
 		A0162B021D9474D7007DB91A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0162B351D94E98E007DB91A /* Default-568h@2x.png */,
 				A0162B031D9474D7007DB91A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -368,8 +368,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/ViewForMySeat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewForMySeat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeat;
 				PRODUCT_NAME = ViewFromMySeat;
 			};
 			name = Debug;
@@ -378,8 +379,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/ViewForMySeat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewForMySeat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeat;
 				PRODUCT_NAME = ViewFromMySeat;
 			};
 			name = Release;
@@ -403,6 +405,7 @@
 				A0162B181D9474D7007DB91A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
