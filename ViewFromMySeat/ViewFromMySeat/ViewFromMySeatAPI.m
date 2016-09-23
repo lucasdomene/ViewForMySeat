@@ -38,7 +38,7 @@ static NSString * const venueDetailsImagePath = @"photos";
 }
 
 + (NSURL *)featuredPhotosURLWithPage:(NSString *)page {
-    return [self viewFromMySeatURLWithPath:featuredPhotosPath andParameters: @{ @"page" : page, @"total" : @"20" }];
+    return [self viewFromMySeatURLWithPath:featuredPhotosPath andParameters: @{ @"page" : page }];
 }
 
 + (NSURL *)venueDetailsURLWithVenue:(NSString *)venueName {

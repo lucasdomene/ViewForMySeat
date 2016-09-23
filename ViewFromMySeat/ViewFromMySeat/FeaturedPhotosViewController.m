@@ -22,6 +22,9 @@
 
 @implementation FeaturedPhotosViewController
 
+int pageNumber = 1;
+BOOL isLastPage = NO;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,15 +32,33 @@
     
     _featuredPhotosDataSource = [FeaturedPhotosDataSource new];
     self.tableView.dataSource = _featuredPhotosDataSource;
+    self.tableView.delegate = self;
     
-    [_featuredPhotoStore fetchFeaturedPhotosInPage:@"1" withCompletion:^(NSArray *featuredPhotos, NSError *error) {
+    [self fetchFeaturedPhotos];
+}
+
+- (void)fetchFeaturedPhotos {
+    [_featuredPhotoStore fetchFeaturedPhotosInPage:@(pageNumber).stringValue withCompletion:^(NSArray *featuredPhotos, NSError *error) {
         if (featuredPhotos) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.featuredPhotosDataSource.featuredPhotos = featuredPhotos;
+                [self.featuredPhotosDataSource.featuredPhotos addObjectsFromArray:featuredPhotos];
                 [self.tableView reloadData];
             }];
         }
     }];
+}
+
+- (void)loadNextPage {
+    if (!isLastPage) {
+        pageNumber++;
+        [self fetchFeaturedPhotos];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == _featuredPhotosDataSource.featuredPhotos.count - 5) {
+        [self loadNextPage];
+    }
 }
 
 

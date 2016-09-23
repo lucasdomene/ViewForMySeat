@@ -11,8 +11,8 @@
 
 @interface FeaturedPhotosDataSource : NSObject <UITableViewDataSource>
 
-@property (nonatomic, copy) NSArray *featuredPhotos;
+@property (nonatomic, copy) NSMutableArray *featuredPhotos;
 
-- (instancetype)initWithFeaturedPhotos:(NSArray *)featuredPhotos;
+- (instancetype)initWithFeaturedPhotos:(NSMutableArray *)featuredPhotos;
 
 @end

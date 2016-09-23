@@ -12,12 +12,16 @@
 
 @implementation FeaturedPhotosDataSource
 
-- (instancetype)initWithFeaturedPhotos:(NSArray *)featuredPhotos {
+- (instancetype)initWithFeaturedPhotos:(NSMutableArray *)featuredPhotos {
     self = [super init];
     if (self) {
         _featuredPhotos = featuredPhotos;
     }
     return self;
+}
+
+- (instancetype)init {
+    return [self initWithFeaturedPhotos:[NSMutableArray new]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

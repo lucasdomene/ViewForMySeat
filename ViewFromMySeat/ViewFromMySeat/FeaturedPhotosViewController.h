@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FeaturedPhotosStore.h"
 
-@interface FeaturedPhotosViewController : UITableViewController
+@interface FeaturedPhotosViewController : UITableViewController <UITableViewDelegate>
 
 @property (nonatomic) FeaturedPhotosStore * featuredPhotoStore;
 
