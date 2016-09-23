@@ -25,15 +25,11 @@ static NSString * const venueDetailsImagePath = @"photos";
 + (NSURL *)viewForMySeatURLWithPath:(NSString *)path andParameters:(NSDictionary *)parameters {
     NSURLComponents * components = [[NSURLComponents alloc] initWithString: [baseURLString stringByAppendingPathComponent:path]];
     NSMutableArray * queryItems = [[NSMutableArray alloc] init];
-    NSDictionary * baseParameters = @{ @"appkey" : appKey };
+    NSMutableDictionary * baseParameters = [@{ @"appkey" : appKey } mutableCopy];
+    [baseParameters addEntriesFromDictionary:parameters];
     
     for (NSString * key in baseParameters) {
-        NSURLQueryItem *queryItem = [[NSURLQueryItem alloc] initWithName:key value: baseParameters[key]];
-        [queryItems addObject:queryItem];
-    }
-    
-    for (NSString * key in parameters) {
-        NSURLQueryItem *queryItem = [[NSURLQueryItem alloc] initWithName:key value: parameters[key]];
+        NSURLQueryItem *queryItem = [NSURLQueryItem queryItemWithName:key value:baseParameters[key]];
         [queryItems addObject:queryItem];
     }
     
@@ -56,5 +52,26 @@ static NSString * const venueDetailsImagePath = @"photos";
 + (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName {
     return [self viewForMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
+
++ (NSArray *)featuredPhotosFromJSONData:(NSData *)data {
+    NSError *jsonError;
+    NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData: data options:NSJSONReadingAllowFragments error:&jsonError];
+    
+    if (!jsonError) {
+        NSMutableArray * featuredPhotos = [[NSMutableArray alloc] init];
+        NSDictionary * featuredPhotosArray = responseObject[@"avfms"];
+        
+        for (NSDictionary *featuredPhotoDictionary in featuredPhotosArray) {
+            // Create FeaturedPhoto
+            // Add to featuredPhotos
+        }
+        
+        return featuredPhotos;
+    }
+    
+    // Treat Error
+    return nil;
+}
+
 
 @end
