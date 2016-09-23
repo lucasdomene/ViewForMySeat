@@ -1,16 +1,16 @@
 //
-//  ViewForMySeatAPI.m
-//  ViewForMySeat
+//  ViewFromMySeatAPI.m
+//  ViewFromMySeat
 //
 //  Created by Lucas Domene Firmo on 9/22/16.
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-#import "ViewForMySeatAPI.h"
+#import "ViewFromMySeatAPI.h"
 #import "FeaturedPhoto.h"
 #import "Venue.h"
 
-@implementation ViewForMySeatAPI
+@implementation ViewFromMySeatAPI
 
 #pragma mark - Attributes
 
@@ -24,7 +24,7 @@ static NSString * const venueDetailsImagePath = @"photos";
 
 #pragma mark - Static Functions
 
-+ (NSURL *)viewForMySeatURLWithPath:(NSString *)path andParameters:(NSDictionary *)parameters {
++ (NSURL *)viewFromMySeatURLWithPath:(NSString *)path andParameters:(NSDictionary *)parameters {
     NSURLComponents * components = [[NSURLComponents alloc] initWithString: [baseURLString stringByAppendingPathComponent:path]];
     NSMutableArray * queryItems = [[NSMutableArray alloc] init];
     NSMutableDictionary * baseParameters = [@{ @"appkey" : appKey } mutableCopy];
@@ -40,19 +40,19 @@ static NSString * const venueDetailsImagePath = @"photos";
 }
 
 + (NSURL *)featuredPhotosURLWithPage:(NSString *)page {
-    return [self viewForMySeatURLWithPath:featuredPhotosPath andParameters: @{ @"page" : page, @"total" : @"20" }];
+    return [self viewFromMySeatURLWithPath:featuredPhotosPath andParameters: @{ @"page" : page, @"total" : @"20" }];
 }
 
 + (NSURL *)venueDetailsURLWithVenue:(NSString *)venueName {
-    return [self viewForMySeatURLWithPath:venueDetailsPath andParameters:@{ @"venue" : venueName, @"info": @"true" }];
+    return [self viewFromMySeatURLWithPath:venueDetailsPath andParameters:@{ @"venue" : venueName, @"info": @"true" }];
 }
 
 + (NSURL *)featuredPhotoImageURLWithImageName:(NSString *)imageName {
-    return [self viewForMySeatURLWithPath:[featuredPhotosImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
+    return [self viewFromMySeatURLWithPath:[featuredPhotosImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
 
 + (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName {
-    return [self viewForMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
+    return [self viewFromMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
 
 + (NSArray *)featuredPhotosFromJSONData:(NSData *)data {

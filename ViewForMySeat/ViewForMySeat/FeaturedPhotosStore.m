@@ -1,13 +1,13 @@
 //
 //  FeaturedPhotosStore.m
-//  ViewForMySeat
+//  ViewFromMySeat
 //
 //  Created by Lucas Domene Firmo on 9/23/16.
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
 #import "FeaturedPhotosStore.h"
-#import "ViewForMySeatAPI.h"
+#import "ViewFromMySeatAPI.h"
 
 @interface FeaturedPhotosStore()
 
@@ -27,12 +27,12 @@
 }
 
 - (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray *))completion {
-    NSURL * url = [ViewForMySeatAPI featuredPhotosURLWithPage:page];
+    NSURL * url = [ViewFromMySeatAPI featuredPhotosURLWithPage:page];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         if (data) {
-            NSArray * featuredPhotos = [ViewForMySeatAPI featuredPhotosFromJSONData:data];
+            NSArray * featuredPhotos = [ViewFromMySeatAPI featuredPhotosFromJSONData:data];
             completion(featuredPhotos);
         } else {
             completion(nil);
@@ -41,7 +41,7 @@
 }
 
 - (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage *))completion {
-    NSURL * url = [ViewForMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
+    NSURL * url = [ViewFromMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {

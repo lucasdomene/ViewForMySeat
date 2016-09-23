@@ -16,14 +16,15 @@
 		A0162B201D947D89007DB91A /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B1F1D947D89007DB91A /* Venue.m */; };
 		A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B221D947D95007DB91A /* FeaturedPhoto.m */; };
 		A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B251D947DC1007DB91A /* VenueViewController.m */; };
-		A0162B2A1D947DE4007DB91A /* ViewForMySeatAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B291D947DE4007DB91A /* ViewForMySeatAPI.m */; };
+		A0162B2A1D947DE4007DB91A /* ViewFromMySeatAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B291D947DE4007DB91A /* ViewFromMySeatAPI.m */; };
 		A0162B2D1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B2C1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m */; };
 		A0162B311D94D973007DB91A /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B301D94D973007DB91A /* ImageStore.m */; };
 		A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */; };
+		A0162B361D94E98E007DB91A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0162B351D94E98E007DB91A /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A0162AFF1D9474D7007DB91A /* ViewForMySeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewForMySeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewFromMySeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0162B031D9474D7007DB91A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0162B051D9474D7007DB91A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0162B061D9474D7007DB91A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,14 +40,15 @@
 		A0162B221D947D95007DB91A /* FeaturedPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhoto.m; sourceTree = "<group>"; };
 		A0162B241D947DC1007DB91A /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueViewController.h; sourceTree = "<group>"; };
 		A0162B251D947DC1007DB91A /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueViewController.m; sourceTree = "<group>"; };
-		A0162B281D947DE4007DB91A /* ViewForMySeatAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForMySeatAPI.h; sourceTree = "<group>"; };
-		A0162B291D947DE4007DB91A /* ViewForMySeatAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForMySeatAPI.m; sourceTree = "<group>"; };
+		A0162B281D947DE4007DB91A /* ViewFromMySeatAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFromMySeatAPI.h; sourceTree = "<group>"; };
+		A0162B291D947DE4007DB91A /* ViewFromMySeatAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFromMySeatAPI.m; sourceTree = "<group>"; };
 		A0162B2B1D947E0F007DB91A /* FeaturedPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotoTableViewCell.h; sourceTree = "<group>"; };
 		A0162B2C1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotoTableViewCell.m; sourceTree = "<group>"; };
 		A0162B2F1D94D973007DB91A /* ImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
 		A0162B301D94D973007DB91A /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 		A0162B321D94DC60007DB91A /* FeaturedPhotosStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotosStore.h; sourceTree = "<group>"; };
 		A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotosStore.m; sourceTree = "<group>"; };
+		A0162B351D94E98E007DB91A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		A0162AF61D9474D7007DB91A = {
 			isa = PBXGroup;
 			children = (
+				A0162B351D94E98E007DB91A /* Default-568h@2x.png */,
 				A0162B011D9474D7007DB91A /* ViewForMySeat */,
 				A0162B001D9474D7007DB91A /* Products */,
 			);
@@ -71,7 +74,7 @@
 		A0162B001D9474D7007DB91A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0162AFF1D9474D7007DB91A /* ViewForMySeat.app */,
+				A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,8 +156,8 @@
 		A0162B271D947DCA007DB91A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A0162B281D947DE4007DB91A /* ViewForMySeatAPI.h */,
-				A0162B291D947DE4007DB91A /* ViewForMySeatAPI.m */,
+				A0162B281D947DE4007DB91A /* ViewFromMySeatAPI.h */,
+				A0162B291D947DE4007DB91A /* ViewFromMySeatAPI.m */,
 				A0162B321D94DC60007DB91A /* FeaturedPhotosStore.h */,
 				A0162B331D94DC60007DB91A /* FeaturedPhotosStore.m */,
 			);
@@ -173,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0162AFE1D9474D7007DB91A /* ViewForMySeat */ = {
+		A0162AFE1D9474D7007DB91A /* ViewFromMySeat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0162B161D9474D7007DB91A /* Build configuration list for PBXNativeTarget "ViewForMySeat" */;
+			buildConfigurationList = A0162B161D9474D7007DB91A /* Build configuration list for PBXNativeTarget "ViewFromMySeat" */;
 			buildPhases = (
 				A0162AFB1D9474D7007DB91A /* Sources */,
 				A0162AFC1D9474D7007DB91A /* Frameworks */,
@@ -185,9 +188,9 @@
 			);
 			dependencies = (
 			);
-			name = ViewForMySeat;
+			name = ViewFromMySeat;
 			productName = ViewForMySeat;
-			productReference = A0162AFF1D9474D7007DB91A /* ViewForMySeat.app */;
+			productReference = A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +208,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A0162AFA1D9474D7007DB91A /* Build configuration list for PBXProject "ViewForMySeat" */;
+			buildConfigurationList = A0162AFA1D9474D7007DB91A /* Build configuration list for PBXProject "ViewFromMySeat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,7 +221,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0162AFE1D9474D7007DB91A /* ViewForMySeat */,
+				A0162AFE1D9474D7007DB91A /* ViewFromMySeat */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0162B121D9474D7007DB91A /* LaunchScreen.storyboard in Resources */,
+				A0162B361D94E98E007DB91A /* Default-568h@2x.png in Resources */,
 				A0162B0F1D9474D7007DB91A /* Assets.xcassets in Resources */,
 				A0162B0D1D9474D7007DB91A /* Main.storyboard in Resources */,
 			);
@@ -250,7 +254,7 @@
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
 				A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
-				A0162B2A1D947DE4007DB91A /* ViewForMySeatAPI.m in Sources */,
+				A0162B2A1D947DE4007DB91A /* ViewFromMySeatAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,10 +368,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ViewForMySeat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewForMySeat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ViewFromMySeat;
 			};
 			name = Debug;
 		};
@@ -375,17 +378,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ViewForMySeat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewForMySeat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ViewFromMySeat;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0162AFA1D9474D7007DB91A /* Build configuration list for PBXProject "ViewForMySeat" */ = {
+		A0162AFA1D9474D7007DB91A /* Build configuration list for PBXProject "ViewFromMySeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0162B141D9474D7007DB91A /* Debug */,
@@ -394,7 +396,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0162B161D9474D7007DB91A /* Build configuration list for PBXNativeTarget "ViewForMySeat" */ = {
+		A0162B161D9474D7007DB91A /* Build configuration list for PBXNativeTarget "ViewFromMySeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0162B171D9474D7007DB91A /* Debug */,
