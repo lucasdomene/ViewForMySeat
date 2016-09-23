@@ -65,7 +65,7 @@
 		A0162AF61D9474D7007DB91A = {
 			isa = PBXGroup;
 			children = (
-				A0162B011D9474D7007DB91A /* ViewForMySeat */,
+				A0162B011D9474D7007DB91A /* ViewFromMySeat */,
 				A0162B001D9474D7007DB91A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0162B011D9474D7007DB91A /* ViewForMySeat */ = {
+		A0162B011D9474D7007DB91A /* ViewFromMySeat */ = {
 			isa = PBXGroup;
 			children = (
 				A0162B2E1D94D952007DB91A /* Cache */,
@@ -90,7 +90,7 @@
 				A0162B1D1D947558007DB91A /* Resources */,
 				A0162B021D9474D7007DB91A /* Supporting Files */,
 			);
-			path = ViewForMySeat;
+			path = ViewFromMySeat;
 			sourceTree = "<group>";
 		};
 		A0162B021D9474D7007DB91A /* Supporting Files */ = {
@@ -368,7 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/ViewForMySeat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ViewFromMySeat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeat;
 				PRODUCT_NAME = ViewFromMySeat;
@@ -379,7 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/ViewForMySeat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ViewFromMySeat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeat;
 				PRODUCT_NAME = ViewFromMySeat;
