@@ -9,49 +9,36 @@
 #import "FeaturedPhotosStore.h"
 #import "ViewFromMySeatAPI.h"
 
-@interface FeaturedPhotosStore()
-
-@property (nonatomic) NSURLSession *session;
-
-@end
-
 @implementation FeaturedPhotosStore
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:configuration];
-    }
-    return self;
-}
 
 - (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray *))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotosURLWithPage:page];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
-    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+    [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             NSArray * featuredPhotos = [ViewFromMySeatAPI featuredPhotosFromJSONData:data];
             completion(featuredPhotos);
         } else {
+            //treat error or pass it
             completion(nil);
         }
-    }] resume];
+    }];
 }
 
 - (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage *))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotoImageURLWithImageName:featuredPhoto.imagePath];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
-    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+    [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
             completion(image);
         } else {
+            //treat error or pass it
             completion(nil);
         }
-    }] resume];
+    }];
 }
 
 

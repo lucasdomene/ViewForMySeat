@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "BaseRequest.h"
 #import "Venue.h"
 
-@interface VenuesStore : NSObject
+@interface VenuesStore : BaseRequest
 
 - (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue *))completion;
 - (void)fetchVenueImageWithPath:(NSString *)imagePath withCompletion:(void(^)(UIImage *))completion;

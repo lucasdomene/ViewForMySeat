@@ -13,10 +13,6 @@
 #import "FeaturedPhoto.h"
 #import "Venue.h"
 
-@interface FeaturedPhotosViewController ()
-
-@end
-
 @implementation FeaturedPhotosViewController
 
 - (void)viewDidLoad {
