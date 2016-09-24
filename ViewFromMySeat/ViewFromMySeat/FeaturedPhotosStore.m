@@ -63,6 +63,10 @@
     }];
 }
 
+- (void)cleanCache {
+    [_imageStore cleanCache];
+}
+
 
 @end
 

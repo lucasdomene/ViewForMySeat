@@ -43,4 +43,8 @@ static ImageStore *sharedInstance;
     return [self.imageCache objectForKey:key];
 }
 
+- (void)cleanCache {
+    [self.imageCache removeAllObjects];
+}
+
 @end

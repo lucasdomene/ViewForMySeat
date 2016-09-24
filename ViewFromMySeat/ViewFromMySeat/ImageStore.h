@@ -14,5 +14,6 @@
 + (ImageStore *)sharedInstance;
 - (void)cacheImage:(UIImage *)image forKey:(NSString *)key;
 - (UIImage *)imageForKey:(NSString *)key;
+- (void)cleanCache;
 
 @end
