@@ -11,6 +11,7 @@
 @interface FeaturedPhotoTableViewCell()
 
 @property (nonatomic) UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *venueLabelWithConstraint;
 
 @end
 
