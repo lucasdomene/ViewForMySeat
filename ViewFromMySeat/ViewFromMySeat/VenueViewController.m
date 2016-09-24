@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@", _featuredPhoto.venue);
+    self.title = _featuredPhoto.venue;
 }
 
 

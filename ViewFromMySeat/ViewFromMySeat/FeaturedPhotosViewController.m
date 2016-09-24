@@ -72,6 +72,7 @@ BOOL isLastPage = NO;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     FeaturedPhoto * featuredPhoto = _featuredPhotosDataSource.featuredPhotos[indexPath.row];
     [self performSegueWithIdentifier:@"showVenueDetails" sender:featuredPhoto];
 }
