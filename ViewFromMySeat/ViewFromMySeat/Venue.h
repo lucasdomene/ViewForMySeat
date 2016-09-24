@@ -21,7 +21,6 @@
 @property (nonatomic, readonly, copy) NSString * averageRating;
 @property (nonatomic, readonly, copy) NSString * stats;
 @property (nonatomic, readonly, copy) NSString * link;
-@property (nonatomic) UIImage * image;
 
 - (instancetype)initWithVenueID:(NSString *)venueID
                            name:(NSString *)name

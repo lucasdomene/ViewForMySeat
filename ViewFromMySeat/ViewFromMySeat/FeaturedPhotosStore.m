@@ -44,7 +44,6 @@
 - (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage * image, NSError * error))completion {
     UIImage * cachedImage = [_imageStore imageForKey:featuredPhoto.featuredPhotoID];
     if (cachedImage) {
-        featuredPhoto.image = cachedImage;
         completion(cachedImage, nil);
         return;
     }
@@ -55,7 +54,6 @@
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
-            featuredPhoto.image = image;
             [_imageStore cacheImage:image forKey:featuredPhoto.featuredPhotoID];
             completion(image, nil);
         } else {

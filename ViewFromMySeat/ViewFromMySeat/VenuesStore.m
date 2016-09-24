@@ -44,7 +44,6 @@
 - (void)fetchVenueImageForVenue:(Venue *)venue withCompletion:(void(^)(UIImage * image, NSError * error))completion; {
     UIImage * cachedImage = [_imageStore imageForKey:venue.venueID];
     if (cachedImage) {
-        venue.image = cachedImage;
         completion(cachedImage, nil);
         return;
     }
