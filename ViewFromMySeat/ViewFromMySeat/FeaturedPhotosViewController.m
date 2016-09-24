@@ -36,6 +36,9 @@ BOOL isLastPage = NO;
     self.tableView.dataSource = _featuredPhotosDataSource;
     self.tableView.delegate = self;
     
+    [self setEstimateRowHeight];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     [self fetchFeaturedPhotos];
 }
 
@@ -85,6 +88,15 @@ BOOL isLastPage = NO;
     }
 }
 
+- (void)didRotate {
+    [self setEstimateRowHeight];
+    [self.tableView reloadData];
+}
+
+- (void)setEstimateRowHeight {
+    self.tableView.estimatedRowHeight = self.view.frame.size.width * 0.6;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 
 
 @end

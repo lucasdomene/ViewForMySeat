@@ -11,7 +11,6 @@
 @interface FeaturedPhotoTableViewCell()
 
 @property (nonatomic) UIActivityIndicatorView *spinner;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *venueLabelWithConstraint;
 
 @end
 
@@ -28,17 +27,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configureSpinner];
     [self updateWithImage:nil];
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
+    [self configureSpinner];
     [self updateWithImage:nil];
 }
 
 - (void)configureSpinner {
-    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
     _spinner.center = CGPointMake(CGRectGetMidX(self.venueImageView.frame), CGRectGetMidY(self.venueImageView.frame));
     _spinner.hidesWhenStopped = YES;
     [self.venueImageView addSubview:_spinner];
