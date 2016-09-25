@@ -18,7 +18,13 @@
                         <rect key="frame" x="8" y="8" width="304" height="90.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYw-Cj-eyz">
-                                <rect key="frame" x="8" y="8" width="51" height="19.5"/>
+                                <rect key="frame" x="8" y="8" width="248" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City - State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-OE-m5H">
+                                <rect key="frame" x="8" y="35" width="248" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,12 +35,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City - State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-OE-m5H">
-                                <rect key="frame" x="8" y="35" width="68.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bNj-mv-kCR">
+                                <rect key="frame" x="264" y="8" width="32" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-i3-26I">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Evr-ve-fkl"/>
+                                            <constraint firstAttribute="width" constant="32" id="fcp-oq-ZzE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7j-oA-Uqa">
+                                        <rect key="frame" x="0.0" y="32" width="32" height="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -42,9 +60,13 @@
                             <constraint firstItem="Cf7-OE-m5H" firstAttribute="leading" secondItem="ZHi-tV-Qs3" secondAttribute="leading" constant="8" id="12N-vU-3Vt"/>
                             <constraint firstItem="zWp-eR-QnV" firstAttribute="top" secondItem="Cf7-OE-m5H" secondAttribute="bottom" constant="8" id="G55-qv-7XP"/>
                             <constraint firstAttribute="bottom" secondItem="zWp-eR-QnV" secondAttribute="bottom" constant="8" id="HJL-o6-7rF"/>
+                            <constraint firstItem="bNj-mv-kCR" firstAttribute="leading" secondItem="Cf7-OE-m5H" secondAttribute="trailing" constant="8" id="KtD-a4-rxx"/>
                             <constraint firstItem="eYw-Cj-eyz" firstAttribute="leading" secondItem="ZHi-tV-Qs3" secondAttribute="leading" constant="8" id="SX1-gZ-cZ8"/>
                             <constraint firstItem="Cf7-OE-m5H" firstAttribute="top" secondItem="eYw-Cj-eyz" secondAttribute="bottom" constant="8" id="US4-qZ-Gnc"/>
+                            <constraint firstAttribute="trailing" secondItem="bNj-mv-kCR" secondAttribute="trailing" constant="8" id="VrJ-Gq-XcF"/>
                             <constraint firstItem="eYw-Cj-eyz" firstAttribute="top" secondItem="ZHi-tV-Qs3" secondAttribute="top" constant="8" id="Wxo-jX-pPZ"/>
+                            <constraint firstItem="bNj-mv-kCR" firstAttribute="top" secondItem="ZHi-tV-Qs3" secondAttribute="top" constant="8" id="YnI-cr-ffr"/>
+                            <constraint firstItem="bNj-mv-kCR" firstAttribute="leading" secondItem="eYw-Cj-eyz" secondAttribute="trailing" constant="8" id="iua-KJ-eIc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -65,8 +87,12 @@
                 <outlet property="addressLabel" destination="eYw-Cj-eyz" id="0JI-Ku-Je4"/>
                 <outlet property="cityAndStateLabel" destination="Cf7-OE-m5H" id="n1f-Ls-woa"/>
                 <outlet property="countryLabel" destination="zWp-eR-QnV" id="zMZ-SJ-OzA"/>
+                <outlet property="ratingLabel" destination="M7j-oA-Uqa" id="yAq-bu-tx8"/>
             </connections>
             <point key="canvasLocation" x="390" y="448.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="rating" width="32" height="32"/>
+    </resources>
 </document>

@@ -80,6 +80,7 @@ enum VenueRows {
     cell.addressLabel.text = venue.address;
     cell.cityAndStateLabel.text = cityAndState;
     cell.countryLabel.text = venue.country;
+    cell.ratingLabel.text = venue.averageRating;
     
     return cell;
 }
@@ -88,10 +89,13 @@ enum VenueRows {
     VenueStatsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VenueStatsCell" forIndexPath:indexPath];
     Venue * venue = _venueDetails[1];
     
-    NSAttributedString * stats = [[NSAttributedString alloc] initWithData:[venue.stats dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil];
-    
-    NSString *trimmedString = [stats.string stringByTrimmingCharactersInSet:
-                               [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSData * stringData = [venue.stats dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary * options = @{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType};
+    NSAttributedString * decodedString = [[NSAttributedString alloc] initWithData:stringData
+                                                                          options:options
+                                                               documentAttributes:NULL
+                                                                            error:NULL];
+    NSString *trimmedString = [decodedString.string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     cell.statsLabel.text = trimmedString;
     
     return cell;

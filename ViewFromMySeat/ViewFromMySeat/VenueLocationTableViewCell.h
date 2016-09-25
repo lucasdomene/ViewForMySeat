@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cityAndStateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *countryLabel;
+@property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 
 @end
