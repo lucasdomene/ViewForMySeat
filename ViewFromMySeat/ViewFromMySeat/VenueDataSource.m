@@ -11,10 +11,7 @@
 #import "FeaturedPhoto.h"
 #import "VenueLocationTableViewCell.h"
 #import "FeaturedPhotoTableViewCell.h"
-
-//#define featuredPhotoRow 0
-//#define venueLocationRow 1
-//#define venueStatsRow 2
+#import "VenueStatsTableViewCell.h"
 
 enum VenueRows {
     FeaturedPhotoRow = 0,
@@ -50,10 +47,10 @@ enum VenueRows {
             return [self featuredPhotoCellWithTableView:tableView atIndexPath:indexPath];
             break;
         case VenueLocationRow:
-            return [UITableViewCell new];
+            return [self venueLocationCellWithTableView:tableView atIndexPath:indexPath];
             break;
         case VenueStatsRow:
-            return [UITableViewCell new];
+            return [self venueStatsCellWithTableView:tableView atIndexPath:indexPath];
             break;
         default:
             break;
@@ -71,6 +68,31 @@ enum VenueRows {
     cell.numberOfViewsLabel.text = featuredPhoto.views;
     cell.notesLabel.text = featuredPhoto.note;
     [cell updateWithImage:featuredPhoto.image];
+    
+    return cell;
+}
+
+- (VenueLocationTableViewCell *)venueLocationCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    VenueLocationTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VenueLocationCell" forIndexPath:indexPath];
+    Venue * venue = _venueDetails[1];
+    NSString * cityAndState = [NSString stringWithFormat:@"%@ - %@", venue.city, venue.state];
+    
+    cell.addressLabel.text = venue.address;
+    cell.cityAndStateLabel.text = cityAndState;
+    cell.countryLabel.text = venue.country;
+    
+    return cell;
+}
+
+- (VenueStatsTableViewCell *)venueStatsCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    VenueStatsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VenueStatsCell" forIndexPath:indexPath];
+    Venue * venue = _venueDetails[1];
+    
+    NSAttributedString * stats = [[NSAttributedString alloc] initWithData:[venue.stats dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil];
+    
+    NSString *trimmedString = [stats.string stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    cell.statsLabel.text = trimmedString;
     
     return cell;
 }

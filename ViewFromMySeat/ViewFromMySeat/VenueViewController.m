@@ -21,6 +21,8 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FeaturedPhotoTableViewCell" bundle:nil] forCellReuseIdentifier:@"FeaturedPhotoCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"VenueLocationTableViewCell" bundle:nil] forCellReuseIdentifier:@"VenueLocationCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"VenueStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"VenueStatsCell"];
     
     self.title = _featuredPhoto.venue;
     
@@ -30,6 +32,20 @@
     
     [self setEstimateRowHeight];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
+    [self fetchVenue];
+}
+
+- (void)fetchVenue {
+    [_venuesStore fetchVenueWithName:_featuredPhoto.venue withCompletion:^(Venue *venue, NSError *error) {
+        //Treat Error
+        if (venue) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.venueDataSource.venueDetails addObject:venue];
+                [self.tableView reloadData];
+            }];
+        }
+    }];
 }
 
 - (void)didRotate {

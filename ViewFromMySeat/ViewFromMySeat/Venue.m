@@ -53,7 +53,7 @@
 }
 
 - (BOOL)hasStats {
-    return self.stats ? YES : NO;
+    return [self.stats length] != 0 ? YES : NO;
 }
 
 @end

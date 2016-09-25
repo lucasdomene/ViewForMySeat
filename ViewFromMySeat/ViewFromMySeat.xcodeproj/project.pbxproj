@@ -28,6 +28,8 @@
 		A0F6F3D51D983937003297C5 /* VenueLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */; };
 		A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */; };
 		A0F6F3D91D983E69003297C5 /* VenueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3D81D983E69003297C5 /* VenueDataSource.m */; };
+		A0F6F3DD1D9859FF003297C5 /* VenueStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */; };
+		A0F6F3DE1D9859FF003297C5 /* VenueStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,9 @@
 		A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueLocationTableViewCell.xib; sourceTree = "<group>"; };
 		A0F6F3D71D983E69003297C5 /* VenueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDataSource.h; sourceTree = "<group>"; };
 		A0F6F3D81D983E69003297C5 /* VenueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDataSource.m; sourceTree = "<group>"; };
+		A0F6F3DA1D9859FF003297C5 /* VenueStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueStatsTableViewCell.h; sourceTree = "<group>"; };
+		A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueStatsTableViewCell.m; sourceTree = "<group>"; };
+		A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueStatsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +160,9 @@
 				A0F6F3D21D983937003297C5 /* VenueLocationTableViewCell.h */,
 				A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */,
 				A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */,
+				A0F6F3DA1D9859FF003297C5 /* VenueStatsTableViewCell.h */,
+				A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */,
+				A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 				A0162B121D9474D7007DB91A /* LaunchScreen.storyboard in Resources */,
 				A0162B361D94E98E007DB91A /* Default-568h@2x.png in Resources */,
 				A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */,
+				A0F6F3DE1D9859FF003297C5 /* VenueStatsTableViewCell.xib in Resources */,
 				A0ED59F51D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib in Resources */,
 				A0162B0F1D9474D7007DB91A /* Assets.xcassets in Resources */,
 				A0162B0D1D9474D7007DB91A /* Main.storyboard in Resources */,
@@ -295,6 +304,7 @@
 				A0162B311D94D973007DB91A /* ImageStore.m in Sources */,
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
 				A0ED59F01D94F1D100A7F3FA /* VenuesStore.m in Sources */,
+				A0F6F3DD1D9859FF003297C5 /* VenueStatsTableViewCell.m in Sources */,
 				A0ED59F91D95A10C00A7F3FA /* FeaturedPhotosDataSource.m in Sources */,
 				A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
