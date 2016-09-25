@@ -25,6 +25,8 @@
 		A0ED59F31D94F9E800A7F3FA /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ED59F21D94F9E800A7F3FA /* BaseRequest.m */; };
 		A0ED59F51D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0ED59F41D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib */; };
 		A0ED59F91D95A10C00A7F3FA /* FeaturedPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ED59F81D95A10C00A7F3FA /* FeaturedPhotosDataSource.m */; };
+		A0F6F3D51D983937003297C5 /* VenueLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */; };
+		A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,9 @@
 		A0ED59F41D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturedPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		A0ED59F71D95A10C00A7F3FA /* FeaturedPhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedPhotosDataSource.h; sourceTree = "<group>"; };
 		A0ED59F81D95A10C00A7F3FA /* FeaturedPhotosDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotosDataSource.m; sourceTree = "<group>"; };
+		A0F6F3D21D983937003297C5 /* VenueLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueLocationTableViewCell.h; sourceTree = "<group>"; };
+		A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueLocationTableViewCell.m; sourceTree = "<group>"; };
+		A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueLocationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,9 @@
 				A0162B2B1D947E0F007DB91A /* FeaturedPhotoTableViewCell.h */,
 				A0162B2C1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m */,
 				A0ED59F41D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib */,
+				A0F6F3D21D983937003297C5 /* VenueLocationTableViewCell.h */,
+				A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */,
+				A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 			files = (
 				A0162B121D9474D7007DB91A /* LaunchScreen.storyboard in Resources */,
 				A0162B361D94E98E007DB91A /* Default-568h@2x.png in Resources */,
+				A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */,
 				A0ED59F51D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib in Resources */,
 				A0162B0F1D9474D7007DB91A /* Assets.xcassets in Resources */,
 				A0162B0D1D9474D7007DB91A /* Main.storyboard in Resources */,
@@ -284,6 +293,7 @@
 				A0ED59F91D95A10C00A7F3FA /* FeaturedPhotosDataSource.m in Sources */,
 				A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
+				A0F6F3D51D983937003297C5 /* VenueLocationTableViewCell.m in Sources */,
 				A0162B2A1D947DE4007DB91A /* ViewFromMySeatAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
