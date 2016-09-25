@@ -27,12 +27,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self configureSpinner];
     [self updateWithImage:nil];
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    [self configureSpinner];
     [self updateWithImage:nil];
 }
 

@@ -70,6 +70,7 @@ enum VenueRows {
     cell.seatLabel.text = seatInfo;
     cell.numberOfViewsLabel.text = featuredPhoto.views;
     cell.notesLabel.text = featuredPhoto.note;
+    [cell updateWithImage:featuredPhoto.image];
     
     return cell;
 }

@@ -29,6 +29,12 @@
     [_venueDataSource.venueDetails addObject:_featuredPhoto];
     
     [self setEstimateRowHeight];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)didRotate {
+    [self setEstimateRowHeight];
+    [self.tableView reloadData];
 }
 
 - (void)setEstimateRowHeight {
