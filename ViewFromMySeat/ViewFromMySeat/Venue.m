@@ -18,8 +18,7 @@
                           state:(NSString *)state
                         country:(NSString *)country
                   averageRating:(NSString *)averageRating
-                          stats:(NSString *)stats
-                           link:(NSString *)link {
+                          stats:(NSString *)stats {
     self = [super init];
     if (self) {
         _venueID = [_venueID copy];
@@ -31,7 +30,6 @@
         _country = [country copy];
         _averageRating = [averageRating copy];
         _stats = [stats copy];
-        _link = [link copy];
     }
     
     return self;
@@ -47,9 +45,8 @@
     NSString * country = json[@"country"];
     NSString * averageRating = json[@"average_rating"];
     NSString * stats = json[@"stats"];
-    NSString * link = json[@"link"]; 
     
-    return [self initWithVenueID:venueID name:name imagePath:imagePath address:address city:city state:state country:country averageRating:averageRating stats:stats link:link];
+    return [self initWithVenueID:venueID name:name imagePath:imagePath address:address city:city state:state country:country averageRating:averageRating stats:stats];
 }
 
 - (BOOL)hasStats {

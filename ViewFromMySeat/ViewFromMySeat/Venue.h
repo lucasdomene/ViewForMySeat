@@ -20,7 +20,6 @@
 @property (nonatomic, readonly, copy) NSString * country;
 @property (nonatomic, readonly, copy) NSString * averageRating;
 @property (nonatomic, readonly, copy) NSString * stats;
-@property (nonatomic, readonly, copy) NSString * link;
 @property (nonatomic) UIImage * image;
 
 - (instancetype)initWithVenueID:(NSString *)venueID
@@ -31,8 +30,7 @@
                           state:(NSString *)state
                         country:(NSString *)country
                   averageRating:(NSString *)averageRating
-                          stats:(NSString *)stats
-                           link:(NSString *)link;
+                          stats:(NSString *)stats;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 - (BOOL)hasStats;
