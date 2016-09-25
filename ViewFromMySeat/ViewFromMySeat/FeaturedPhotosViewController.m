@@ -44,11 +44,13 @@ BOOL isLastPage = NO;
 - (void)fetchFeaturedPhotos {
     [_featuredPhotoStore fetchFeaturedPhotosInPage:@(pageNumber).stringValue withCompletion:^(NSArray *featuredPhotos, NSError *error) {
         //Treat Error
-        if (featuredPhotos) {
+        if (featuredPhotos && featuredPhotos.count > 0) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.featuredPhotosDataSource.featuredPhotos addObjectsFromArray:featuredPhotos];
                 [self.tableView reloadData];
             }];
+        } else {
+            isLastPage = TRUE;
         }
     }];
 }

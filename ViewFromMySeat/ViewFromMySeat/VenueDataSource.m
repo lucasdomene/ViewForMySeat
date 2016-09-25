@@ -33,7 +33,7 @@ enum VenueRows {
     return [self initWithVenueDetails:[NSMutableArray new]];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (_venueDetails.count == 2) {
         Venue * venue = _venueDetails[1];
         return [venue hasStats] ? 3 : 2;
@@ -41,8 +41,12 @@ enum VenueRows {
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case FeaturedPhotoRow:
             return [self featuredPhotoCellWithTableView:tableView atIndexPath:indexPath];
             break;
@@ -51,6 +55,20 @@ enum VenueRows {
             break;
         case VenueStatsRow:
             return [self venueStatsCellWithTableView:tableView atIndexPath:indexPath];
+            break;
+        default:
+            break;
+    }
+    return nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case VenueLocationRow:
+            return @"Location";
+            break;
+        case VenueStatsRow:
+            return @"Stats";
             break;
         default:
             break;
