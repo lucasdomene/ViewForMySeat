@@ -27,6 +27,7 @@
 		A0ED59F91D95A10C00A7F3FA /* FeaturedPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ED59F81D95A10C00A7F3FA /* FeaturedPhotosDataSource.m */; };
 		A0F6F3D51D983937003297C5 /* VenueLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */; };
 		A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */; };
+		A0F6F3D91D983E69003297C5 /* VenueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3D81D983E69003297C5 /* VenueDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		A0F6F3D21D983937003297C5 /* VenueLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueLocationTableViewCell.h; sourceTree = "<group>"; };
 		A0F6F3D31D983937003297C5 /* VenueLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueLocationTableViewCell.m; sourceTree = "<group>"; };
 		A0F6F3D41D983937003297C5 /* VenueLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueLocationTableViewCell.xib; sourceTree = "<group>"; };
+		A0F6F3D71D983E69003297C5 /* VenueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDataSource.h; sourceTree = "<group>"; };
+		A0F6F3D81D983E69003297C5 /* VenueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 			children = (
 				A0ED59F71D95A10C00A7F3FA /* FeaturedPhotosDataSource.h */,
 				A0ED59F81D95A10C00A7F3FA /* FeaturedPhotosDataSource.m */,
+				A0F6F3D71D983E69003297C5 /* VenueDataSource.h */,
+				A0F6F3D81D983E69003297C5 /* VenueDataSource.m */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				A0162B341D94DC60007DB91A /* FeaturedPhotosStore.m in Sources */,
 				A0162B231D947D95007DB91A /* FeaturedPhoto.m in Sources */,
 				A0F6F3D51D983937003297C5 /* VenueLocationTableViewCell.m in Sources */,
+				A0F6F3D91D983E69003297C5 /* VenueDataSource.m in Sources */,
 				A0162B2A1D947DE4007DB91A /* ViewFromMySeatAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,5 +34,6 @@
                            link:(NSString *)link;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
+- (BOOL)hasStats;
 
 @end

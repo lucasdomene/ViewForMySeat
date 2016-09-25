@@ -52,4 +52,8 @@
     return [self initWithVenueID:venueID name:name imagePath:imagePath address:address city:city state:state country:country averageRating:averageRating stats:stats link:link];
 }
 
+- (BOOL)hasStats {
+    return self.stats ? YES : NO;
+}
+
 @end

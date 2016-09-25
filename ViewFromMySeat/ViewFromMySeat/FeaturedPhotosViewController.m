@@ -34,7 +34,6 @@ BOOL isLastPage = NO;
     
     _featuredPhotosDataSource = [FeaturedPhotosDataSource new];
     self.tableView.dataSource = _featuredPhotosDataSource;
-    self.tableView.delegate = self;
     
     [self setEstimateRowHeight];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];

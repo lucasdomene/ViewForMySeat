@@ -15,7 +15,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
-                            <outlet property="dataSource" destination="Bfn-j5-Vrn" id="EyO-LA-gge"/>
                             <outlet property="delegate" destination="Bfn-j5-Vrn" id="4Ap-mg-cqM"/>
                         </connections>
                     </tableView>
@@ -37,7 +36,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="dataSource" destination="j7V-SR-ocO" id="OuF-02-Pho"/>
                             <outlet property="delegate" destination="j7V-SR-ocO" id="65I-3T-nAG"/>
                         </connections>
                     </tableView>
