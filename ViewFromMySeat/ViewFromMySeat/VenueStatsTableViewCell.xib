@@ -20,11 +20,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaB-Fd-Pc3">
                                 <rect key="frame" x="8" y="8" width="30.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3803921569" green="0.78823529410000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="NaB-Fd-Pc3" secondAttribute="bottom" constant="7.5" id="0kU-uJ-gVu"/>
                             <constraint firstItem="NaB-Fd-Pc3" firstAttribute="leading" secondItem="xC2-N6-9lp" secondAttribute="leading" constant="8" id="Pcq-H4-2rP"/>
