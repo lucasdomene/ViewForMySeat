@@ -89,6 +89,7 @@
 - (void)shareVenue {
     NSString * textToShare = [NSString stringWithFormat:@"This seat in %@ is amazing!", _featuredPhoto.venue];
     UIActivityViewController * activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare, _featuredPhoto.image] applicationActivities:nil];
+    activityViewController.popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem;
     [self presentViewController:activityViewController animated:true completion:nil];
 }
 
