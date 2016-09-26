@@ -30,6 +30,9 @@
 		A0F6F3DD1D9859FF003297C5 /* VenueStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */; };
 		A0F6F3DE1D9859FF003297C5 /* VenueStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */; };
 		A0F6F3E01D98C862003297C5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3DF1D98C862003297C5 /* Media.xcassets */; };
+		A0F6F3E41D98D390003297C5 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3E21D98D390003297C5 /* MapTableViewCell.m */; };
+		A0F6F3E51D98D390003297C5 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3E31D98D390003297C5 /* MapTableViewCell.xib */; };
+		A0F6F3E71D98D3E8003297C5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6F3E61D98D3E8003297C5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,10 @@
 		A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueStatsTableViewCell.m; sourceTree = "<group>"; };
 		A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueStatsTableViewCell.xib; sourceTree = "<group>"; };
 		A0F6F3DF1D98C862003297C5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		A0F6F3E11D98D390003297C5 /* MapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableViewCell.h; sourceTree = "<group>"; };
+		A0F6F3E21D98D390003297C5 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
+		A0F6F3E31D98D390003297C5 /* MapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
+		A0F6F3E61D98D3E8003297C5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F6F3E71D98D3E8003297C5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +97,7 @@
 		A0162AF61D9474D7007DB91A = {
 			isa = PBXGroup;
 			children = (
+				A0F6F3E61D98D3E8003297C5 /* MapKit.framework */,
 				A0162B011D9474D7007DB91A /* ViewFromMySeat */,
 				A0162B001D9474D7007DB91A /* Products */,
 			);
@@ -164,6 +173,9 @@
 				A0F6F3DA1D9859FF003297C5 /* VenueStatsTableViewCell.h */,
 				A0F6F3DB1D9859FF003297C5 /* VenueStatsTableViewCell.m */,
 				A0F6F3DC1D9859FF003297C5 /* VenueStatsTableViewCell.xib */,
+				A0F6F3E11D98D390003297C5 /* MapTableViewCell.h */,
+				A0F6F3E21D98D390003297C5 /* MapTableViewCell.m */,
+				A0F6F3E31D98D390003297C5 /* MapTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 				A0F6F3D61D983937003297C5 /* VenueLocationTableViewCell.xib in Resources */,
 				A0F6F3DE1D9859FF003297C5 /* VenueStatsTableViewCell.xib in Resources */,
 				A0ED59F51D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib in Resources */,
+				A0F6F3E51D98D390003297C5 /* MapTableViewCell.xib in Resources */,
 				A0162B0D1D9474D7007DB91A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +314,7 @@
 				A0162B041D9474D7007DB91A /* main.m in Sources */,
 				A0ED59F31D94F9E800A7F3FA /* BaseRequest.m in Sources */,
 				A0162B2D1D947E0F007DB91A /* FeaturedPhotoTableViewCell.m in Sources */,
+				A0F6F3E41D98D390003297C5 /* MapTableViewCell.m in Sources */,
 				A0162B311D94D973007DB91A /* ImageStore.m in Sources */,
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
 				A0ED59F01D94F1D100A7F3FA /* VenuesStore.m in Sources */,

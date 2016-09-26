@@ -12,11 +12,12 @@
 #import "VenueLocationTableViewCell.h"
 #import "FeaturedPhotoTableViewCell.h"
 #import "VenueStatsTableViewCell.h"
+#import "MapTableViewCell.h"
 
-enum VenueRows {
-    FeaturedPhotoRow = 0,
-    VenueLocationRow = 1,
-    VenueStatsRow = 2
+enum VenueSections {
+    FeaturedPhotoSection = 0,
+    VenueLocationSection = 1,
+    VenueStatsSection = 2
 };
 
 @implementation VenueDataSource
@@ -42,18 +43,26 @@ enum VenueRows {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == VenueLocationSection) {
+        return 2;
+    }
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
-        case FeaturedPhotoRow:
+        case FeaturedPhotoSection:
             return [self featuredPhotoCellWithTableView:tableView atIndexPath:indexPath];
             break;
-        case VenueLocationRow:
-            return [self venueLocationCellWithTableView:tableView atIndexPath:indexPath];
+        case VenueLocationSection:{
+            if (indexPath.row == 0) {
+                return [self venueLocationCellWithTableView:tableView atIndexPath:indexPath];
+            } else {
+                return [self venueMapCellWithTableView:tableView atIndexPath:indexPath];
+            }
             break;
-        case VenueStatsRow:
+        }
+        case VenueStatsSection:
             return [self venueStatsCellWithTableView:tableView atIndexPath:indexPath];
             break;
         default:
@@ -64,10 +73,10 @@ enum VenueRows {
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
-        case VenueLocationRow:
+        case VenueLocationSection:
             return @"Location";
             break;
-        case VenueStatsRow:
+        case VenueStatsSection:
             return @"Stats";
             break;
         default:
@@ -115,6 +124,22 @@ enum VenueRows {
                                                                             error:NULL];
     NSString *trimmedString = [decodedString.string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     cell.statsLabel.text = trimmedString;
+    
+    return cell;
+}
+
+- (MapTableViewCell *)venueMapCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    MapTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"MapCell"];
+    Venue * venue = _venueDetails[1];
+    
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder geocodeAddressString:venue.address completionHandler:^(NSArray<CLPlacemark *> * placemarks, NSError * error) {
+        if (placemarks.count > 0 && placemarks.firstObject.location) {
+            MKPointAnnotation * pin = [[MKPointAnnotation alloc] init];
+            pin.coordinate = placemarks.firstObject.location.coordinate;
+            [cell.mapView showAnnotations:@[pin] animated:YES];
+        }
+    }];
     
     return cell;
 }
