@@ -31,6 +31,8 @@
     self.tableView.dataSource = _venueDataSource;
     [_venueDataSource.venueDetails addObject:_featuredPhoto];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareVenue)];
+    
     [self setEstimateRowHeight];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     [self configureSpinner];
@@ -82,6 +84,12 @@
     _spinner.color = [UIColor colorWithRed:97.0/255.0 green:201.0/255.0 blue:172.0/255.0 alpha:1.0];
     _spinner.hidesWhenStopped = YES;
     [self.view addSubview:_spinner];
+}
+
+- (void)shareVenue {
+    NSString * textToShare = [NSString stringWithFormat:@"This seat in %@ is amazing!", _featuredPhoto.venue];
+    UIActivityViewController * activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare, _featuredPhoto.image] applicationActivities:nil];
+    [self presentViewController:activityViewController animated:true completion:nil];
 }
 
 
