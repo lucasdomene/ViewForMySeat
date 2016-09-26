@@ -35,7 +35,19 @@
 		A0F6F3E71D98D3E8003297C5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6F3E61D98D3E8003297C5 /* MapKit.framework */; };
 		A0F6F3EA1D999B54003297C5 /* ZoomImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3E91D999B54003297C5 /* ZoomImageViewController.m */; };
 		A0F6F3ED1D99B29F003297C5 /* UIAlertController+CustomAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */; };
+		A0F6F3F61D99CD99003297C5 /* ViewFromMySeatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */; };
+		A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0F6F3F81D99CD99003297C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0162AF71D9474D7007DB91A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0162AFE1D9474D7007DB91A;
+			remoteInfo = ViewFromMySeat;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewFromMySeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +98,10 @@
 		A0F6F3E91D999B54003297C5 /* ZoomImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomImageViewController.m; sourceTree = "<group>"; };
 		A0F6F3EB1D99B29F003297C5 /* UIAlertController+CustomAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CustomAlerts.h"; sourceTree = "<group>"; };
 		A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CustomAlerts.m"; sourceTree = "<group>"; };
+		A0F6F3F31D99CD99003297C5 /* ViewFromMySeatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewFromMySeatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewFromMySeatTests.m; sourceTree = "<group>"; };
+		A0F6F3F71D99CD99003297C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0F6F3F01D99CD99003297C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +128,7 @@
 			children = (
 				A0F6F3E61D98D3E8003297C5 /* MapKit.framework */,
 				A0162B011D9474D7007DB91A /* ViewFromMySeat */,
+				A0F6F3F41D99CD99003297C5 /* ViewFromMySeatTests */,
 				A0162B001D9474D7007DB91A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */,
+				A0F6F3F31D99CD99003297C5 /* ViewFromMySeatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +267,16 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		A0F6F3F41D99CD99003297C5 /* ViewFromMySeatTests */ = {
+			isa = PBXGroup;
+			children = (
+				A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */,
+				A0F6F3F71D99CD99003297C5 /* Info.plist */,
+				A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */,
+			);
+			path = ViewFromMySeatTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +297,24 @@
 			productReference = A0162AFF1D9474D7007DB91A /* ViewFromMySeat.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A0F6F3F21D99CD99003297C5 /* ViewFromMySeatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F6F3FA1D99CD99003297C5 /* Build configuration list for PBXNativeTarget "ViewFromMySeatTests" */;
+			buildPhases = (
+				A0F6F3EF1D99CD99003297C5 /* Sources */,
+				A0F6F3F01D99CD99003297C5 /* Frameworks */,
+				A0F6F3F11D99CD99003297C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0F6F3F91D99CD99003297C5 /* PBXTargetDependency */,
+			);
+			name = ViewFromMySeatTests;
+			productName = ViewFromMySeatTests;
+			productReference = A0F6F3F31D99CD99003297C5 /* ViewFromMySeatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -274,6 +327,11 @@
 					A0162AFE1D9474D7007DB91A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8VWQC7JGT6;
+					};
+					A0F6F3F21D99CD99003297C5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8VWQC7JGT6;
+						TestTargetID = A0162AFE1D9474D7007DB91A;
 					};
 				};
 			};
@@ -291,6 +349,7 @@
 			projectRoot = "";
 			targets = (
 				A0162AFE1D9474D7007DB91A /* ViewFromMySeat */,
+				A0F6F3F21D99CD99003297C5 /* ViewFromMySeatTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +367,13 @@
 				A0ED59F51D9592C200A7F3FA /* FeaturedPhotoTableViewCell.xib in Resources */,
 				A0F6F3E51D98D390003297C5 /* MapTableViewCell.xib in Resources */,
 				A0162B0D1D9474D7007DB91A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F6F3F11D99CD99003297C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +406,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0F6F3EF1D99CD99003297C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */,
+				A0F6F3F61D99CD99003297C5 /* ViewFromMySeatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0F6F3F91D99CD99003297C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0162AFE1D9474D7007DB91A /* ViewFromMySeat */;
+			targetProxy = A0F6F3F81D99CD99003297C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0162B0B1D9474D7007DB91A /* Main.storyboard */ = {
@@ -468,6 +551,30 @@
 			};
 			name = Release;
 		};
+		A0F6F3FB1D99CD99003297C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ViewFromMySeatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewFromMySeat.app/ViewFromMySeat";
+			};
+			name = Debug;
+		};
+		A0F6F3FC1D99CD99003297C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ViewFromMySeatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.domene.ViewFromMySeatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewFromMySeat.app/ViewFromMySeat";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -488,6 +595,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A0F6F3FA1D99CD99003297C5 /* Build configuration list for PBXNativeTarget "ViewFromMySeatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F6F3FB1D99CD99003297C5 /* Debug */,
+				A0F6F3FC1D99CD99003297C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
