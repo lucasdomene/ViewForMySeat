@@ -22,8 +22,8 @@
 }
 
 - (void)tearDown {
-    [super tearDown];
     _featuredPhoto = nil;
+    [super tearDown];
 }
 
 - (void)testFeaturePhotoCreation {

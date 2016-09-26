@@ -37,6 +37,7 @@
 		A0F6F3ED1D99B29F003297C5 /* UIAlertController+CustomAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */; };
 		A0F6F3F61D99CD99003297C5 /* ViewFromMySeatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */; };
 		A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */; };
+		A0F6F4021D99D350003297C5 /* VenueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F4011D99D350003297C5 /* VenueTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewFromMySeatTests.m; sourceTree = "<group>"; };
 		A0F6F3F71D99CD99003297C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotoTests.m; sourceTree = "<group>"; };
+		A0F6F4011D99D350003297C5 /* VenueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				A0F6F3F51D99CD99003297C5 /* ViewFromMySeatTests.m */,
 				A0F6F3F71D99CD99003297C5 /* Info.plist */,
 				A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */,
+				A0F6F4011D99D350003297C5 /* VenueTests.m */,
 			);
 			path = ViewFromMySeatTests;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */,
 				A0F6F3F61D99CD99003297C5 /* ViewFromMySeatTests.m in Sources */,
+				A0F6F4021D99D350003297C5 /* VenueTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

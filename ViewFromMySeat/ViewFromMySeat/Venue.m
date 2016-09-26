@@ -21,7 +21,7 @@
                           stats:(NSString *)stats {
     self = [super init];
     if (self) {
-        _venueID = [_venueID copy];
+        _venueID = [venueID copy];
         _name = [name copy];
         _imagePath = [imagePath copy];
         _address = [address copy];
