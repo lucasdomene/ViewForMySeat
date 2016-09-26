@@ -32,10 +32,15 @@
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
-            Venue * venue = [ViewFromMySeatAPI venueFromJSONData:data];
-            completion(venue, nil);
+            NSError * jsonError;
+            Venue * venue = [ViewFromMySeatAPI venueFromJSONData:data error:&jsonError];
+            
+            if (!jsonError) {
+                completion(venue, nil);
+            } else {
+                completion(nil, jsonError);
+            }
         } else {
-            // Throw the error
             completion(nil, error);
         }
     }];

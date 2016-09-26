@@ -32,10 +32,15 @@
     
     [self makeRequest:request withCompletion:^(NSData * data, NSError * error) {
         if (data) {
-            NSArray * featuredPhotos = [ViewFromMySeatAPI featuredPhotosFromJSONData:data];
-            completion(featuredPhotos, nil);
+            NSError * jsonError;
+            NSArray * featuredPhotos = [ViewFromMySeatAPI featuredPhotosFromJSONData:data error:&jsonError];
+            
+            if (!jsonError) {
+                completion(featuredPhotos, nil);
+            } else {
+                completion(nil, [NSError new]);
+            }
         } else {
-            //treat error or pass it
             completion(nil, error);
         }
     }];
@@ -59,7 +64,6 @@
             [_imageStore cacheImage:image forKey:featuredPhoto.featuredPhotoID];
             completion(image, nil);
         } else {
-            //treat error or pass it
             completion(nil, error);
         }
     }];

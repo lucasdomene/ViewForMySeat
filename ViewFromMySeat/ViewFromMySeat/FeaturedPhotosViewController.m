@@ -15,6 +15,7 @@
 #import "FeaturedPhotosDataSource.h"
 #import "FeaturedPhotoTableViewCell.h"
 #import "VenueViewController.h"
+#import "UIAlertController+CustomAlerts.h"
 
 @interface FeaturedPhotosViewController()
 
@@ -43,8 +44,14 @@ BOOL isLastPage = NO;
 
 - (void)fetchFeaturedPhotos {
     [_featuredPhotoStore fetchFeaturedPhotosInPage:@(pageNumber).stringValue withCompletion:^(NSArray *featuredPhotos, NSError *error) {
-        //Treat Error
-        if (featuredPhotos && featuredPhotos.count > 0) {
+        if (error) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
+                    [self fetchFeaturedPhotos];
+                }];
+                [self presentViewController:alertController animated:true completion:nil];
+            }];
+        } else if (featuredPhotos && featuredPhotos.count > 0) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.featuredPhotosDataSource.featuredPhotos addObjectsFromArray:featuredPhotos];
                 [self.tableView reloadData];
@@ -69,10 +76,14 @@ BOOL isLastPage = NO;
     
     FeaturedPhoto * featuredPhoto = _featuredPhotosDataSource.featuredPhotos[indexPath.row];
     [_featuredPhotoStore fetchImageForFeaturedPhoto:featuredPhoto withCompletion:^(UIImage *image, NSError *error) {
-       [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-           FeaturedPhotoTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
-           [cell updateWithImage:image];
-       }];
+        if (error) {
+            NSLog(@"Error fetching image");
+        } else if (image) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                FeaturedPhotoTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                [cell updateWithImage:image];
+            }];
+        }
     }];
 }
 

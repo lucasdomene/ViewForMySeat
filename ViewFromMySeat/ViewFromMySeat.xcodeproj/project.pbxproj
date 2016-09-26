@@ -33,6 +33,8 @@
 		A0F6F3E41D98D390003297C5 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3E21D98D390003297C5 /* MapTableViewCell.m */; };
 		A0F6F3E51D98D390003297C5 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6F3E31D98D390003297C5 /* MapTableViewCell.xib */; };
 		A0F6F3E71D98D3E8003297C5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6F3E61D98D3E8003297C5 /* MapKit.framework */; };
+		A0F6F3EA1D999B54003297C5 /* ZoomImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3E91D999B54003297C5 /* ZoomImageViewController.m */; };
+		A0F6F3ED1D99B29F003297C5 /* UIAlertController+CustomAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,10 @@
 		A0F6F3E21D98D390003297C5 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
 		A0F6F3E31D98D390003297C5 /* MapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
 		A0F6F3E61D98D3E8003297C5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A0F6F3E81D999B54003297C5 /* ZoomImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomImageViewController.h; sourceTree = "<group>"; };
+		A0F6F3E91D999B54003297C5 /* ZoomImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomImageViewController.m; sourceTree = "<group>"; };
+		A0F6F3EB1D99B29F003297C5 /* UIAlertController+CustomAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CustomAlerts.h"; sourceTree = "<group>"; };
+		A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CustomAlerts.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,8 @@
 				A0162B191D947509007DB91A /* ViewControllers */,
 				A0162B1D1D947558007DB91A /* Resources */,
 				A0162B021D9474D7007DB91A /* Supporting Files */,
+				A0F6F3EB1D99B29F003297C5 /* UIAlertController+CustomAlerts.h */,
+				A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */,
 			);
 			path = ViewFromMySeat;
 			sourceTree = "<group>";
@@ -146,6 +154,8 @@
 				A0162B091D9474D7007DB91A /* FeaturedPhotosViewController.m */,
 				A0162B241D947DC1007DB91A /* VenueViewController.h */,
 				A0162B251D947DC1007DB91A /* VenueViewController.m */,
+				A0F6F3E81D999B54003297C5 /* ZoomImageViewController.h */,
+				A0F6F3E91D999B54003297C5 /* ZoomImageViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -317,6 +327,8 @@
 				A0F6F3E41D98D390003297C5 /* MapTableViewCell.m in Sources */,
 				A0162B311D94D973007DB91A /* ImageStore.m in Sources */,
 				A0162B261D947DC1007DB91A /* VenueViewController.m in Sources */,
+				A0F6F3EA1D999B54003297C5 /* ZoomImageViewController.m in Sources */,
+				A0F6F3ED1D99B29F003297C5 /* UIAlertController+CustomAlerts.m in Sources */,
 				A0ED59F01D94F1D100A7F3FA /* VenuesStore.m in Sources */,
 				A0F6F3DD1D9859FF003297C5 /* VenueStatsTableViewCell.m in Sources */,
 				A0ED59F91D95A10C00A7F3FA /* FeaturedPhotosDataSource.m in Sources */,

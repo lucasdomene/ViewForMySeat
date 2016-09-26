@@ -53,7 +53,7 @@ static NSString * const venueDetailsImagePath = @"photos";
     return [self viewFromMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
 
-+ (NSArray *)featuredPhotosFromJSONData:(NSData *)data {
++ (NSArray *)featuredPhotosFromJSONData:(NSData *)data error:(NSError **)error {
     NSError * jsonError;
     NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
     
@@ -68,12 +68,12 @@ static NSString * const venueDetailsImagePath = @"photos";
         
         return featuredPhotos;
     } else {
-        NSLog(@"Error parsing data to JSON: %@", jsonError);
+        *error = jsonError;
         return nil;
     }
 }
 
-+ (Venue *)venueFromJSONData:(NSData *)data {
++ (Venue *)venueFromJSONData:(NSData *)data error:(NSError **)error {
     NSError * jsonError;
     NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
     
@@ -82,7 +82,7 @@ static NSString * const venueDetailsImagePath = @"photos";
         NSDictionary * venueDictionary = venuesArray.firstObject;
         return [[Venue alloc] initWithJSON:venueDictionary];
     } else {
-        NSLog(@"Error parsing data to JSON: %@", jsonError);
+        *error = jsonError;
         return nil;
     }
 }

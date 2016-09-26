@@ -22,6 +22,8 @@
     FeaturedPhotosViewController * vc = (FeaturedPhotosViewController *)nav.topViewController;
     vc.featuredPhotoStore = [FeaturedPhotosStore new];
     vc.venuesStore = [VenuesStore new];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }
 

@@ -17,7 +17,7 @@
 + (NSURL *)venueDetailsURLWithVenue:(NSString *)venueName;
 + (NSURL *)featuredPhotoImageURLWithImageName:(NSString *)imageName;
 + (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName;
-+ (NSArray *)featuredPhotosFromJSONData:(NSData *)data;
-+ (Venue *)venueFromJSONData:(NSData *)data;
++ (NSArray *)featuredPhotosFromJSONData:(NSData *)data error:(NSError **)error;
++ (Venue *)venueFromJSONData:(NSData *)data error:(NSError **)error;
 
 @end

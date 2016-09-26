@@ -8,7 +8,8 @@
 
 #import "VenueViewController.h"
 #import "VenueDataSource.h"
-#import "AppDelegate.h"
+#import "ZoomImageViewController.h"
+#import "UIAlertController+CustomAlerts.h"
 
 @interface VenueViewController ()
 
@@ -42,8 +43,12 @@
 - (void)fetchVenue {
     [_spinner startAnimating];
     [_venuesStore fetchVenueWithName:_featuredPhoto.venue withCompletion:^(Venue *venue, NSError *error) {
-        //Treat Error
-        if (venue) {
+        if (error) {
+            UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
+                [self fetchVenue];
+            }];
+            [self presentViewController:alertController animated:true completion:nil];
+        } else if (venue) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.venueDataSource.venueDetails addObject:venue];
                 [self.tableView reloadData];
@@ -71,6 +76,12 @@
     [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"presentFullImage" sender:nil];
+    }
+}
+
 - (void)registerCells {
     [self.tableView registerNib:[UINib nibWithNibName:@"FeaturedPhotoTableViewCell" bundle:nil] forCellReuseIdentifier:@"FeaturedPhotoCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"VenueLocationTableViewCell" bundle:nil] forCellReuseIdentifier:@"VenueLocationCell"];
@@ -93,5 +104,14 @@
     [self presentViewController:activityViewController animated:true completion:nil];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"presentFullImage"]) {
+        ZoomImageViewController *zoomImageViewController = (ZoomImageViewController *)segue.destinationViewController;
+        zoomImageViewController.venue = _venueDataSource.venueDetails[1];
+        zoomImageViewController.venuesStore = _venuesStore;
+    }
+}
+
+- (IBAction)unwindToVenueViewController:(UIStoryboardSegue *)segue {}
 
 @end
