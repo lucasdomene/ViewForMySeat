@@ -39,15 +39,16 @@ BOOL isLastPage = NO;
     [self setEstimateRowHeight];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
-    [self fetchFeaturedPhotos];
+    [self fetchFeaturedPhotosWithCompletion:nil];
+    [self createPullToRefresh];
 }
 
-- (void)fetchFeaturedPhotos {
+- (void)fetchFeaturedPhotosWithCompletion:(void(^)())completion {
     [_featuredPhotoStore fetchFeaturedPhotosInPage:@(pageNumber).stringValue withCompletion:^(NSArray *featuredPhotos, NSError *error) {
         if (error) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
-                    [self fetchFeaturedPhotos];
+                    [self fetchFeaturedPhotosWithCompletion:nil];
                 }];
                 [self presentViewController:alertController animated:true completion:nil];
             }];
@@ -59,13 +60,16 @@ BOOL isLastPage = NO;
         } else {
             isLastPage = TRUE;
         }
+        if (completion) {
+            completion();
+        }
     }];
 }
 
 - (void)loadNextPage {
     if (!isLastPage) {
         pageNumber++;
-        [self fetchFeaturedPhotos];
+        [self fetchFeaturedPhotosWithCompletion:nil];
     }
 }
 
@@ -109,6 +113,21 @@ BOOL isLastPage = NO;
 - (void)setEstimateRowHeight {
     self.tableView.estimatedRowHeight = self.view.frame.size.width * 0.6;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)createPullToRefresh {
+    UIRefreshControl * refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshFeaturedPhotos:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)refreshFeaturedPhotos:(UIRefreshControl *)sender {
+    isLastPage = NO;
+    pageNumber = 1;
+    [_featuredPhotosDataSource.featuredPhotos removeAllObjects];
+    [self fetchFeaturedPhotosWithCompletion:^{
+        [sender endRefreshing];
+    }];
 }
 
 
