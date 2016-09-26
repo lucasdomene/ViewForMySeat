@@ -8,10 +8,12 @@
 
 #import "VenueViewController.h"
 #import "VenueDataSource.h"
+#import "AppDelegate.h"
 
 @interface VenueViewController ()
 
 @property (nonatomic) VenueDataSource * venueDataSource;
+@property (nonatomic) UIActivityIndicatorView * spinner;
 
 @end
 
@@ -31,10 +33,12 @@
     
     [self setEstimateRowHeight];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [self configureSpinner];
     [self fetchVenue];
 }
 
 - (void)fetchVenue {
+    [_spinner startAnimating];
     [_venuesStore fetchVenueWithName:_featuredPhoto.venue withCompletion:^(Venue *venue, NSError *error) {
         //Treat Error
         if (venue) {
@@ -43,6 +47,9 @@
                 [self.tableView reloadData];
             }];
         }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [_spinner stopAnimating];
+        }];
     }];
 }
 
@@ -68,4 +75,14 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"VenueStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"VenueStatsCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"MapTableViewCell" bundle:nil] forCellReuseIdentifier:@"MapCell"];
 }
+
+- (void)configureSpinner {
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _spinner.center = self.view.center;
+    _spinner.color = [UIColor colorWithRed:97.0/255.0 green:201.0/255.0 blue:172.0/255.0 alpha:1.0];
+    _spinner.hidesWhenStopped = YES;
+    [self.view addSubview:_spinner];
+}
+
+
 @end
