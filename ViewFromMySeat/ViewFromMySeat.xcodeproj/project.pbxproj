@@ -120,17 +120,15 @@
 		A0162B011D9474D7007DB91A /* ViewFromMySeat */ = {
 			isa = PBXGroup;
 			children = (
+				A0F6F3EE1D99BB6A003297C5 /* Categories */,
 				A0ED59F61D95A0DF00A7F3FA /* DataManagers */,
 				A0162B2E1D94D952007DB91A /* Cache */,
 				A0162B271D947DCA007DB91A /* Networking */,
-				A0162B1C1D94751B007DB91A /* Constants */,
 				A0162B1B1D947514007DB91A /* Views */,
 				A0162B1A1D94750F007DB91A /* Models */,
 				A0162B191D947509007DB91A /* ViewControllers */,
 				A0162B1D1D947558007DB91A /* Resources */,
 				A0162B021D9474D7007DB91A /* Supporting Files */,
-				A0F6F3EB1D99B29F003297C5 /* UIAlertController+CustomAlerts.h */,
-				A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */,
 			);
 			path = ViewFromMySeat;
 			sourceTree = "<group>";
@@ -190,13 +188,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		A0162B1C1D94751B007DB91A /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Constants;
-			sourceTree = "<group>";
-		};
 		A0162B1D1D947558007DB91A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +231,15 @@
 				A0F6F3D81D983E69003297C5 /* VenueDataSource.m */,
 			);
 			name = DataManagers;
+			sourceTree = "<group>";
+		};
+		A0F6F3EE1D99BB6A003297C5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A0F6F3EB1D99B29F003297C5 /* UIAlertController+CustomAlerts.h */,
+				A0F6F3EC1D99B29F003297C5 /* UIAlertController+CustomAlerts.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

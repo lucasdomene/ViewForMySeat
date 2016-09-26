@@ -20,7 +20,7 @@ static NSString * const venueDetailsPath = @"avf/api/venue.php";
 static NSString * const venueDetailsImagePath = @"photos";
 
 
-#pragma mark - Static Functions
+#pragma mark - URLs creation
 
 + (NSURL *)viewFromMySeatURLWithPath:(NSString *)path andParameters:(NSDictionary *)parameters {
     NSURLComponents * components = [[NSURLComponents alloc] initWithString: [baseURLString stringByAppendingPathComponent:path]];
@@ -52,6 +52,8 @@ static NSString * const venueDetailsImagePath = @"photos";
 + (NSURL *)venueDetailsImageURLWithImageName:(NSString *)imageName {
     return [self viewFromMySeatURLWithPath:[venueDetailsImagePath stringByAppendingPathComponent:imageName] andParameters:nil];
 }
+
+#pragma mark - JSON Parsing
 
 + (NSArray *)featuredPhotosFromJSONData:(NSData *)data error:(NSError **)error {
     NSError * jsonError;

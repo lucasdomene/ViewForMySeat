@@ -12,6 +12,8 @@
 
 @implementation FeaturedPhotosDataSource
 
+#pragma mark - Init
+
 - (instancetype)initWithFeaturedPhotos:(NSMutableArray *)featuredPhotos {
     self = [super init];
     if (self) {
@@ -23,6 +25,8 @@
 - (instancetype)init {
     return [self initWithFeaturedPhotos:[NSMutableArray new]];
 }
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _featuredPhotos.count;

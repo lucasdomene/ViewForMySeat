@@ -18,10 +18,14 @@
 
 @implementation ZoomImageViewController
 
+#pragma mark - View life Cycle
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self fetchVenueImage];
 }
+
+#pragma mark - View Life Cycle
 
 - (void)fetchVenueImage {
     [_spinner startAnimating];

@@ -28,6 +28,8 @@
 int pageNumber = 1;
 BOOL isLastPage = NO;
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,6 +44,8 @@ BOOL isLastPage = NO;
     [self fetchFeaturedPhotosWithCompletion:nil];
     [self createPullToRefresh];
 }
+
+#pragma mark - Data Fetchers
 
 - (void)fetchFeaturedPhotosWithCompletion:(void(^)())completion {
     [_featuredPhotoStore fetchFeaturedPhotosInPage:@(pageNumber).stringValue withCompletion:^(NSArray *featuredPhotos, NSError *error) {
@@ -66,12 +70,18 @@ BOOL isLastPage = NO;
     }];
 }
 
-- (void)loadNextPage {
-    if (!isLastPage) {
-        pageNumber++;
-        [self fetchFeaturedPhotosWithCompletion:nil];
-    }
+- (void)fetchImageForFeaturedPhoto:(FeaturedPhoto *)featuredPhoto withCompletion:(void(^)(UIImage * image))completion {
+    [_featuredPhotoStore fetchImageForFeaturedPhoto:featuredPhoto withCompletion:^(UIImage *image, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching image");
+            completion(nil);
+        } else if (image) {
+            completion(image);
+        }
+    }];
 }
+
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == _featuredPhotosDataSource.featuredPhotos.count - 5) {
@@ -79,15 +89,11 @@ BOOL isLastPage = NO;
     }
     
     FeaturedPhoto * featuredPhoto = _featuredPhotosDataSource.featuredPhotos[indexPath.row];
-    [_featuredPhotoStore fetchImageForFeaturedPhoto:featuredPhoto withCompletion:^(UIImage *image, NSError *error) {
-        if (error) {
-            NSLog(@"Error fetching image");
-        } else if (image) {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                FeaturedPhotoTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                [cell updateWithImage:image];
-            }];
-        }
+    [self fetchImageForFeaturedPhoto:featuredPhoto withCompletion:^(UIImage *image) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            FeaturedPhotoTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            [cell updateWithImage:image];
+        }];
     }];
 }
 
@@ -97,6 +103,8 @@ BOOL isLastPage = NO;
     [self performSegueWithIdentifier:@"showVenueDetails" sender:featuredPhoto];
 }
 
+#pragma mark - Segues
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showVenueDetails"]) {
         VenueViewController * venueViewController = (VenueViewController *)segue.destinationViewController;
@@ -105,15 +113,31 @@ BOOL isLastPage = NO;
     }
 }
 
+#pragma mark - Rotation
+
 - (void)didRotate {
     [self setEstimateRowHeight];
     [self.tableView reloadData];
 }
 
+
+#pragma mark - View Configuration
+
 - (void)setEstimateRowHeight {
     self.tableView.estimatedRowHeight = self.view.frame.size.width * 0.6;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
+
+#pragma mark - Paging
+
+- (void)loadNextPage {
+    if (!isLastPage) {
+        pageNumber++;
+        [self fetchFeaturedPhotosWithCompletion:nil];
+    }
+}
+
+#pragma mark - Pull to Refresh
 
 - (void)createPullToRefresh {
     UIRefreshControl * refreshControl = [[UIRefreshControl alloc] init];

@@ -16,6 +16,8 @@
 
 @implementation BaseRequest
 
+#pragma mark - Inits
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -24,6 +26,8 @@
     }
     return self;
 }
+
+#pragma mark - Data Fetchers
 
 - (void)makeRequest:(NSURLRequest *)request withCompletion:(void(^)(NSData * data, NSError * error))completion {
     [[self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {

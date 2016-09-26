@@ -22,6 +22,8 @@ enum VenueSections {
 
 @implementation VenueDataSource
 
+#pragma mark - Inits
+
 - (instancetype)initWithVenueDetails:(NSMutableArray *)venueDetails {
     self = [super init];
     if (self) {
@@ -33,6 +35,8 @@ enum VenueSections {
 - (instancetype)init {
     return [self initWithVenueDetails:[NSMutableArray new]];
 }
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (_venueDetails.count == 2) {
@@ -84,6 +88,8 @@ enum VenueSections {
     }
     return nil;
 }
+
+#pragma mark - Cells creation
 
 - (FeaturedPhotoTableViewCell *)featuredPhotoCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
     FeaturedPhotoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedPhotoCell" forIndexPath:indexPath];

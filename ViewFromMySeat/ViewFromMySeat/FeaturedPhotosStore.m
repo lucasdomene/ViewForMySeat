@@ -18,6 +18,8 @@
 
 @implementation FeaturedPhotosStore
 
+#pragma mark - Inits
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -25,6 +27,8 @@
     }
     return self;
 }
+
+#pragma mark - Data Fetchers
 
 - (void)fetchFeaturedPhotosInPage:(NSString *)page withCompletion:(void(^)(NSArray * featuredPhotos, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI featuredPhotosURLWithPage:page];
@@ -68,6 +72,8 @@
         }
     }];
 }
+
+#pragma mark - Cache Management
 
 - (void)cleanCache {
     [_imageStore cleanCache];

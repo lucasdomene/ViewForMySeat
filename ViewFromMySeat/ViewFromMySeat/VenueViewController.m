@@ -20,6 +20,8 @@
 
 @implementation VenueViewController
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,6 +41,8 @@
     [self configureSpinner];
     [self fetchVenue];
 }
+
+#pragma mark - Data Fetchers
 
 - (void)fetchVenue {
     [_spinner startAnimating];
@@ -60,10 +64,14 @@
     }];
 }
 
+#pragma mark - Rotation
+
 - (void)didRotate {
     [self setEstimateRowHeight];
     [self.tableView reloadData];
 }
+
+#pragma mark - View Configuration
 
 - (void)setEstimateRowHeight {
     self.tableView.estimatedRowHeight = self.view.frame.size.width * 0.6;
@@ -74,12 +82,6 @@
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setFont:[UIFont fontWithName:@"Avenir-Heavy" size:17]];
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor colorWithRed:97.0/255.0 green:201.0/255.0 blue:172.0/255.0 alpha:1.0]];
     [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1.0]];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        [self performSegueWithIdentifier:@"presentFullImage" sender:nil];
-    }
 }
 
 - (void)registerCells {
@@ -97,12 +99,24 @@
     [self.view addSubview:_spinner];
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"presentFullImage" sender:nil];
+    }
+}
+
+#pragma mark - Sharing
+
 - (void)shareVenue {
     NSString * textToShare = [NSString stringWithFormat:@"This seat in %@ is amazing!", _featuredPhoto.venue];
     UIActivityViewController * activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare, _featuredPhoto.image] applicationActivities:nil];
     activityViewController.popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem;
     [self presentViewController:activityViewController animated:true completion:nil];
 }
+
+#pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"presentFullImage"]) {

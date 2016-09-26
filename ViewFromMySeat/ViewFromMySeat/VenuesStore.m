@@ -18,6 +18,8 @@
 
 @implementation VenuesStore
 
+#pragma mark - Inits
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -25,6 +27,8 @@
     }
     return self;
 }
+
+#pragma mark - Data Fetchers
 
 - (void)fetchVenueWithName:(NSString *)venueName withCompletion:(void(^)(Venue * venue, NSError * error))completion {
     NSURL * url = [ViewFromMySeatAPI venueDetailsURLWithVenue:venueName];
