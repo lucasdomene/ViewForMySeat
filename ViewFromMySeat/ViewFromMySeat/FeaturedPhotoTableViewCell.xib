@@ -71,6 +71,13 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pur-2p-hec">
                                 <rect key="frame" x="134" y="58" width="37" height="37"/>
                             </activityIndicatorView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zoom" translatesAutoresizingMaskIntoConstraints="NO" id="jgK-Qj-s0p">
+                                <rect key="frame" x="264" y="8" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="OPZ-xE-LyE"/>
+                                    <constraint firstAttribute="height" constant="32" id="hi8-vi-m6a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.38039215686274508" green="0.78823529411764703" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -82,7 +89,9 @@
                             <constraint firstItem="6m8-2f-GU5" firstAttribute="leading" secondItem="fYY-e2-V3q" secondAttribute="leading" constant="5" id="Kx3-1I-cMT"/>
                             <constraint firstAttribute="trailing" secondItem="4a5-AW-JrC" secondAttribute="trailing" constant="5" id="QrE-RT-iuT"/>
                             <constraint firstItem="pur-2p-hec" firstAttribute="centerY" secondItem="xB2-qf-IcH" secondAttribute="centerY" id="SoH-h4-q5z"/>
+                            <constraint firstAttribute="trailing" secondItem="jgK-Qj-s0p" secondAttribute="trailing" constant="8" id="Wsy-3s-exG"/>
                             <constraint firstItem="4a5-AW-JrC" firstAttribute="leading" secondItem="tXD-Mj-f6E" secondAttribute="trailing" constant="5" id="XwD-nP-CFY"/>
+                            <constraint firstItem="jgK-Qj-s0p" firstAttribute="top" secondItem="fYY-e2-V3q" secondAttribute="top" constant="8" id="Z6W-Vm-ENM"/>
                             <constraint firstItem="xB2-qf-IcH" firstAttribute="top" secondItem="fYY-e2-V3q" secondAttribute="top" constant="5" id="hEN-m2-3lr"/>
                             <constraint firstItem="pur-2p-hec" firstAttribute="centerX" secondItem="xB2-qf-IcH" secondAttribute="centerX" id="ixA-FO-pTc"/>
                             <constraint firstItem="ov7-5F-JQB" firstAttribute="leading" secondItem="fYY-e2-V3q" secondAttribute="leading" constant="5" id="lHW-jZ-x6c"/>
@@ -115,11 +124,13 @@
                 <outlet property="spinner" destination="pur-2p-hec" id="3fQ-C7-wNE"/>
                 <outlet property="venueImageView" destination="xB2-qf-IcH" id="5IV-Uh-jee"/>
                 <outlet property="venueNameLabel" destination="tXD-Mj-f6E" id="E1a-kf-Gw3"/>
+                <outlet property="zoomImage" destination="jgK-Qj-s0p" id="OsO-UI-3hU"/>
             </connections>
             <point key="canvasLocation" x="290" y="417.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="views" width="32" height="32"/>
+        <image name="zoom" width="32" height="32"/>
     </resources>
 </document>

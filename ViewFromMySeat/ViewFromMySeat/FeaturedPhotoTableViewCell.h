@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *seatLabel;
 @property (strong, nonatomic) IBOutlet UILabel *notesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberOfViewsLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *zoomImage;
 
 - (void)updateWithImage:(UIImage *)image;
 

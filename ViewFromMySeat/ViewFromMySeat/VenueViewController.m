@@ -55,7 +55,26 @@
         } else if (venue) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.venueDataSource.venueDetails addObject:venue];
+                [self fetchVenueImageForVenue:venue];
                 [self.tableView reloadData];
+            }];
+        }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [_spinner stopAnimating];
+        }];
+    }];
+}
+
+- (void)fetchVenueImageForVenue:(Venue *)venue {
+    [_venuesStore fetchVenueImageForVenue:venue withCompletion:^(UIImage *image, NSError *error) {
+        if (error) {
+            UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
+                [self fetchVenueImageForVenue:venue];
+            }];
+            [self presentViewController:alertController animated:true completion:nil];
+        } else if (image) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -122,7 +141,6 @@
     if ([segue.identifier isEqualToString:@"presentFullImage"]) {
         ZoomImageViewController *zoomImageViewController = (ZoomImageViewController *)segue.destinationViewController;
         zoomImageViewController.venue = _venueDataSource.venueDetails[1];
-        zoomImageViewController.venuesStore = _venuesStore;
     }
 }
 

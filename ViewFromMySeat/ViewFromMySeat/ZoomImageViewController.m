@@ -22,28 +22,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self fetchVenueImage];
+    self.imageView.image = _venue.image;
 }
 
-#pragma mark - View Life Cycle
-
-- (void)fetchVenueImage {
-    [_spinner startAnimating];
-    [_venuesStore fetchVenueImageForVenue:_venue withCompletion:^(UIImage *image, NSError *error) {
-        if (error) {
-            UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
-                [self fetchVenueImage];
-            }];
-            [self presentViewController:alertController animated:true completion:nil];
-        } else if (image) {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.imageView.image = image;
-            }];
-        }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [_spinner stopAnimating];
-        }];
-    }];
-}
 
 @end

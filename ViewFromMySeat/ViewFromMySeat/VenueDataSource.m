@@ -100,7 +100,12 @@ enum VenueSections {
     cell.seatLabel.text = seatInfo;
     cell.numberOfViewsLabel.text = featuredPhoto.views;
     cell.notesLabel.text = featuredPhoto.note;
-    [cell updateWithImage:featuredPhoto.image];
+    cell.zoomImage.hidden = NO;
+    
+    if (_venueDetails.count == 2) {
+        Venue * venue = _venueDetails[1];
+        [cell updateWithImage:venue.image];
+    }
     
     return cell;
 }

@@ -12,7 +12,6 @@
 
 @interface ZoomImageViewController : UIViewController
 
-@property (nonatomic) VenuesStore * venuesStore;
 @property (nonatomic) Venue * venue;
 
 @end

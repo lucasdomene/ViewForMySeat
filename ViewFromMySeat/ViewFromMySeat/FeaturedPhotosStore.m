@@ -73,7 +73,7 @@
     }];
 }
 
-#pragma mark - Cache Management
+#pragma mark - Data Fetchers
 
 - (void)cleanCache {
     [_imageStore cleanCache];
