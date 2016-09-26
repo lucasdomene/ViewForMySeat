@@ -39,6 +39,7 @@
 		A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */; };
 		A0F6F4021D99D350003297C5 /* VenueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F4011D99D350003297C5 /* VenueTests.m */; };
 		A0F6F4041D99D64B003297C5 /* ImageStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F4031D99D64B003297C5 /* ImageStoreTests.m */; };
+		A0F6F4061D99D8C5003297C5 /* UIAlertController+CustomAlertsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6F4051D99D8C5003297C5 /* UIAlertController+CustomAlertsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedPhotoTests.m; sourceTree = "<group>"; };
 		A0F6F4011D99D350003297C5 /* VenueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTests.m; sourceTree = "<group>"; };
 		A0F6F4031D99D64B003297C5 /* ImageStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStoreTests.m; sourceTree = "<group>"; };
+		A0F6F4051D99D8C5003297C5 /* UIAlertController+CustomAlertsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CustomAlertsTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				A0F6F3FD1D99CDDF003297C5 /* FeaturedPhotoTests.m */,
 				A0F6F4011D99D350003297C5 /* VenueTests.m */,
 				A0F6F4031D99D64B003297C5 /* ImageStoreTests.m */,
+				A0F6F4051D99D8C5003297C5 /* UIAlertController+CustomAlertsTests.m */,
 			);
 			path = ViewFromMySeatTests;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F6F3FE1D99CDDF003297C5 /* FeaturedPhotoTests.m in Sources */,
+				A0F6F4061D99D8C5003297C5 /* UIAlertController+CustomAlertsTests.m in Sources */,
 				A0F6F3F61D99CD99003297C5 /* ViewFromMySeatTests.m in Sources */,
 				A0F6F4021D99D350003297C5 /* VenueTests.m in Sources */,
 				A0F6F4041D99D64B003297C5 /* ImageStoreTests.m in Sources */,

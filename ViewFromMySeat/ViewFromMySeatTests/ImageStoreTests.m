@@ -42,8 +42,7 @@
     
     [[ImageStore sharedInstance] cleanCache];
     
-    UIImage * cachedImage = [[ImageStore sharedInstance] imageForKey:@"10"];gs
-    
+    UIImage * cachedImage = [[ImageStore sharedInstance] imageForKey:@"10"];
     
     XCTAssertNil(cachedImage);
 }
