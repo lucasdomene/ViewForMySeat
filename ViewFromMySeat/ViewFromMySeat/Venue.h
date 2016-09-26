@@ -20,7 +20,7 @@
 @property (nonatomic, readonly, copy) NSString * country;
 @property (nonatomic, readonly, copy) NSString * averageRating;
 @property (nonatomic, readonly, copy) NSString * stats;
-@property (nonatomic) UIImage * image;
+@property (nonatomic, strong) UIImage * image;
 
 - (instancetype)initWithVenueID:(NSString *)venueID
                            name:(NSString *)name

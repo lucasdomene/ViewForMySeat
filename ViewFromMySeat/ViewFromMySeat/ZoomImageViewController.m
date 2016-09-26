@@ -23,6 +23,20 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.imageView.image = _venue.image;
+    if (_venue.image) {
+        self.imageView.image = _venue.image;
+    } else {
+        [_venue addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionNew context:nil];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"image"]) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.imageView.image = _venue.image;
+        }];
+        [_venue removeObserver:self forKeyPath:@"image"];
+    }
 }
 
 

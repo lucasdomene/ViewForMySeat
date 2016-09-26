@@ -17,7 +17,7 @@
                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at3-eh-Ws0">
                         <rect key="frame" x="8" y="8" width="304" height="103.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="103.5" id="5CX-zh-nG7"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="103.5" id="5CX-zh-nG7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

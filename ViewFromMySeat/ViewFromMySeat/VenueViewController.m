@@ -46,6 +46,7 @@
 
 - (void)fetchVenue {
     [_spinner startAnimating];
+    self.tableView.userInteractionEnabled = NO;
     [_venuesStore fetchVenueWithName:_featuredPhoto.venue withCompletion:^(Venue *venue, NSError *error) {
         if (error) {
             UIAlertController * alertController = [[UIAlertController alloc] initWithError:error andRetryBlock:^{
@@ -54,6 +55,7 @@
             [self presentViewController:alertController animated:true completion:nil];
         } else if (venue) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                self.tableView.userInteractionEnabled = YES;
                 [self.venueDataSource.venueDetails addObject:venue];
                 [self fetchVenueImageForVenue:venue];
                 [self.tableView reloadData];

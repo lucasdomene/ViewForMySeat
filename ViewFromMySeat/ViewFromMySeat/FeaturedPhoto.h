@@ -19,7 +19,7 @@
 @property (nonatomic, readonly, copy) NSString * seat;
 @property (nonatomic, readonly, copy) NSString * views;
 @property (nonatomic, readonly, copy) NSString * note;
-@property (nonatomic) UIImage * image;
+@property (nonatomic, strong) UIImage * image;
 
 - (instancetype)initWithFeaturedPhotoID:(NSString *)featuredPhotoID
                               venueName:(NSString *)venueName
