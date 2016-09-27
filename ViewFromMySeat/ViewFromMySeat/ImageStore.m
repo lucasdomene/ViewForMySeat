@@ -12,7 +12,7 @@ static ImageStore *sharedInstance;
 
 @interface ImageStore()
 
-@property (nonatomic, strong) NSCache *imageCache;
+@property (nonatomic) NSCache *imageCache;
 
 @end
 

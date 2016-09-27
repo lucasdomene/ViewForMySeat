@@ -6,7 +6,6 @@
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "FeaturedPhoto.h"
 #import "Venue.h"
 

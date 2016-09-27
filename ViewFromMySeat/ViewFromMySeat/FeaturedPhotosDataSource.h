@@ -6,12 +6,11 @@
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface FeaturedPhotosDataSource : NSObject <UITableViewDataSource>
 
-@property (nonatomic, copy) NSMutableArray *featuredPhotos;
+@property (nonatomic) NSMutableArray *featuredPhotos;
 
 - (instancetype)initWithFeaturedPhotos:(NSMutableArray *)featuredPhotos;
 

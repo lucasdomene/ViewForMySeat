@@ -6,12 +6,11 @@
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface VenueDataSource : NSObject <UITableViewDataSource>
 
-@property (nonatomic, copy) NSMutableArray *venueDetails;
+@property (nonatomic) NSMutableArray *venueDetails;
 
 - (instancetype)initWithVenueDetails:(NSMutableArray *)venueDetails;
 

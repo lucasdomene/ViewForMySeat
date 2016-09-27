@@ -6,7 +6,6 @@
 //  Copyright © 2016 Domene. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface FeaturedPhoto : NSObject
@@ -19,7 +18,7 @@
 @property (nonatomic, readonly, copy) NSString * seat;
 @property (nonatomic, readonly, copy) NSString * views;
 @property (nonatomic, readonly, copy) NSString * note;
-@property (nonatomic, strong) UIImage * image;
+@property (nonatomic) UIImage * image;
 
 - (instancetype)initWithFeaturedPhotoID:(NSString *)featuredPhotoID
                               venueName:(NSString *)venueName
